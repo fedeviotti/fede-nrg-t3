@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prisma:push": "pnpm prisma db push",
+    "prisma:push": "npx prisma db push",
+    "prisma:studio": "npx prisma studio",
     "build": "next build",
     "dev": "next dev",
     "postinstall": "prisma generate",
