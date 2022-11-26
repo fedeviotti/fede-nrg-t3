@@ -1,22 +1,14 @@
 import React from "react";
-import { useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
-import { useRouter } from "next/router";
+import { useIsAuthenticated } from "../hooks/useIsAuthenticated";
 
 const Dashboard = () => {
-  const { data: sessionData } = useSession();
-  const router = useRouter()
+  const sessionData = useIsAuthenticated();
 
   const { data: secretMessage } = trpc.auth.getSecretMessage.useQuery(
     undefined, // no input
     { enabled: sessionData?.user !== undefined },
   );
-
-  React.useEffect(() => {
-    if (!sessionData) {
-      router.replace("/");
-    }
-  }, [router, sessionData]);
 
   return (
     <div className="flex flex-col items-center justify-center gap-4">
