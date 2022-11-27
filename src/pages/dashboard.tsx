@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       <div className="text-center text-2xl text-black">
-        {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
+        {sessionData && <span>Logged in as {sessionData.user?.name || sessionData.user?.email}</span>}
         {secretMessage && <span> - {secretMessage}</span>}
       </div>
     </div>
