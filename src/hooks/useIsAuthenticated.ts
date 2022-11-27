@@ -3,16 +3,14 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 export function useIsAuthenticated(){
-  const [isRedirected, setIsRedirected] = React.useState(false);
-  const { data: sessionData } = useSession();
+  const { data: sessionData, status } = useSession();
   const router = useRouter();
 
   React.useEffect(() => {
-    if (router && !sessionData && !isRedirected) {
-      router.push("/");
-      setIsRedirected(true);
+    if (router && status === "unauthenticated") {
+      router.push(`/?redirect=${router.asPath}`);
     }
-  }, [isRedirected, router, sessionData]);
+  }, [router, status]);
 
   return sessionData;
 }
