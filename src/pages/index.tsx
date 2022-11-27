@@ -5,6 +5,7 @@ import NextLink from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import { trpc } from "../utils/trpc";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
           </h1>
-          <NextLink href="/dashboard">Dashboard</NextLink>
+          <NextLink href="/dashboard" className="text-white">Dashboard</NextLink>
           <div className="flex flex-col items-center gap-2">
             <p className="text-2xl text-white">
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
@@ -38,6 +39,8 @@ export default Home;
 
 const AuthShowcase = () => {
   const { data: sessionData } = useSession();
+  const router = useRouter();
+  const redirect = router.query.redirect as string;
 
   const { data: secretMessage } = trpc.auth.getSecretMessage.useQuery(
     undefined, // no input
@@ -52,8 +55,10 @@ const AuthShowcase = () => {
       </p>
       <button
         className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
-        onClick={sessionData ? () => signOut() : () => signIn()}
-      >
+        onClick={sessionData
+          ? () => signOut()
+          : () => signIn(undefined, {callbackUrl: redirect || "/"})
+      }>
         {sessionData ? "Sign out" : "Sign in"}
       </button>
     </div>
