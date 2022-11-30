@@ -6,6 +6,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 
 import { trpc } from "../utils/trpc";
 import { useRouter } from "next/router";
+import { Box, Button, Center, Heading, Stack, Text } from "@chakra-ui/react";
 
 // const BACKGROUND_IMAGES = [
 //   "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80",
@@ -24,18 +25,31 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>
-          <h1>
-            Fede <span>Nrg</span>
-          </h1>
-          <NextLink href="/dashboard">Dashboard</NextLink>
-          <div>
-            <p>
-              {hello.data ? hello.data.greeting : "Loading tRPC query..."}
-            </p>
-            <AuthShowcase />
-          </div>
-        </div>
+        <Box
+          backgroundImage="url('https://images.unsplash.com/photo-1610296669228-602fa827fc1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1675&q=80')"
+          backgroundPosition="cover"
+          backgroundRepeat="no-repeat"
+        >
+          <Center height="100vh">
+            <Stack alignItems="center" spacing={8}>
+              <Stack direction="row">
+                <Heading as='h1' size='4xl' color="white">
+                  Fede
+                </Heading>
+                <Heading as='h1' size='4xl' color="home.title">
+                  Nrg
+                </Heading>
+              </Stack>
+              <NextLink href="/dashboard">
+                <Text color="white" fontSize="xl">Dashboard</Text>
+              </NextLink>
+              <Text color="white" fontSize="xl">
+                {hello.data ? hello.data.greeting : "Loading tRPC query..."}
+              </Text>
+              <AuthShowcase />
+            </Stack>
+          </Center>
+        </Box>
       </main>
     </>
   );
@@ -54,18 +68,19 @@ const AuthShowcase = () => {
   );
 
   return (
-    <div>
-      <p>
-        {sessionData && <span>Logged in as {sessionData.user?.name || sessionData.user?.email}</span>}
-        {secretMessage && <span> - {secretMessage}</span>}
-      </p>
-      <button
+    <>
+      <Text color="white">
+        {sessionData && `Logged in as ${sessionData.user?.name || sessionData.user?.email}`}
+        {secretMessage && ` - ${secretMessage}`}
+      </Text>
+      <Button
+        colorScheme="whiteAlpha"
         onClick={sessionData
           ? () => signOut()
           : () => signIn(undefined, {callbackUrl: redirect || "/dashboard"})
       }>
         {sessionData ? "Sign out" : "Sign in"}
-      </button>
-    </div>
+      </Button>
+    </>
   );
 };
