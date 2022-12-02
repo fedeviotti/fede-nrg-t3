@@ -33,10 +33,10 @@ const Home: NextPage = () => {
           <Center height="100vh">
             <Stack alignItems="center" spacing={8}>
               <Stack direction="row">
-                <Heading as='h1' size='4xl' color="white">
+                <Heading as='h1' size='4xl' color="tertiary.50">
                   Fede
                 </Heading>
-                <Heading as='h1' size='4xl' color="home.title">
+                <Heading as='h1' size='4xl' color="tertiary.500">
                   Nrg
                 </Heading>
               </Stack>
