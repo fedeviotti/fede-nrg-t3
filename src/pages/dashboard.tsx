@@ -1,7 +1,7 @@
 import React from "react";
-import { trpc } from "../utils/trpc";
-import { useIsAuthenticated } from "../hooks/useIsAuthenticated";
 import { Center, Text } from "@chakra-ui/react";
+import { trpc } from "utils/trpc";
+import { useIsAuthenticated } from "hooks/useIsAuthenticated";
 
 const Dashboard = () => {
   const sessionData = useIsAuthenticated();

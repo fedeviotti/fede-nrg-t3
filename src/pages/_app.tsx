@@ -3,11 +3,12 @@ import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { ChakraProvider } from "@chakra-ui/react";
 
-import baseTheme from "../themes/baseTheme";
-import { Fonts } from "../components/styles/Fonts";
-import { trpc } from "../utils/trpc";
+import baseTheme from "themes/baseTheme";
+import { Fonts } from "components/styles/Fonts";
+import { trpc } from "utils/trpc";
+import '/i18n';
 
-import "../styles/globals.css";
+import "styles/globals.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
