@@ -1,6 +1,7 @@
 import React from "react";
 import { trpc } from "../utils/trpc";
 import { useIsAuthenticated } from "../hooks/useIsAuthenticated";
+import { Center, Text } from "@chakra-ui/react";
 
 const Dashboard = () => {
   const sessionData = useIsAuthenticated();
@@ -11,12 +12,12 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <div className="text-center text-2xl text-black">
-        {sessionData && <span>Logged in as {sessionData.user?.name || sessionData.user?.email}</span>}
-        {secretMessage && <span> - {secretMessage}</span>}
-      </div>
-    </div>
+    <Center>
+      <Text>
+        {sessionData && `Logged in as ${sessionData.user?.name || sessionData.user?.email}`}
+        {secretMessage && ` - ${secretMessage}`}
+      </Text>
+    </Center>
   )
 }
 
