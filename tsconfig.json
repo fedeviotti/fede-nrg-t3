@@ -18,8 +18,10 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
+      "assets/*": ["./src/assets/*"],
       "components/*": ["./src/components/*"],
       "hooks/*": ["./src/hooks/*"],
+      "layouts/*": ["./src/layouts/*"],
       "pages/*": ["./src/pages/*"],
       "styles/*": ["./src/styles/*"],
       "themes/*": ["./src/themes/*"],
