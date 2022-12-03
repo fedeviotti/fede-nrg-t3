@@ -1,5 +1,5 @@
 import React from "react";
-import { Center, Text } from "@chakra-ui/react";
+import { Box, Center, Text } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
 import { useIsAuthenticated } from "hooks/useIsAuthenticated";
 import { NavbarLayout } from "layouts/NavbarLayout";
@@ -15,13 +15,21 @@ const Dashboard = () => {
   );
 
   return (
-    <Center>
-      <Text>
-        {sessionData && `Logged in as ${sessionData.user?.name || sessionData.user?.email}`}
-        {secretMessage && ` - ${secretMessage}`}
-        {t("title")}
-      </Text>
-    </Center>
+    <>
+      <Box>
+        <Center>
+          <Text>
+            {sessionData && `Logged in as ${sessionData.user?.name || sessionData.user?.email}`}
+            {secretMessage && ` - ${secretMessage}`}
+          </Text>
+        </Center>
+      </Box>
+      <Box>
+        <Text>
+          {t("title")}
+        </Text>
+      </Box>
+    </>
   )
 }
 
