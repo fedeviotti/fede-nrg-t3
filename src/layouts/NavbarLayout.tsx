@@ -9,17 +9,18 @@ type Props = {
 };
 
 export const NavbarLayout = ({ children }: Props) => (
-  <>
-    <Navbar />
-    <Flex
-      direction="column"
-      alignItems="center"
-      px="24px"
-      py="16px"
-      minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px - ${FOOTER_HEIGHT}px)`}
-    >
-      {children}
-    </Flex>
-    <Footer />
-  </>
-);
+    <>
+      <Navbar />
+      <Flex
+        direction="column"
+        alignItems="center"
+        px="24px"
+        py="16px"
+        minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px - ${FOOTER_HEIGHT}px)`}
+      >
+        {children}
+      </Flex>
+      <Footer />
+    </>
+  );
+

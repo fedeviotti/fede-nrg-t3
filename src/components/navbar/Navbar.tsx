@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Avatar, Button,
   Flex,
   HStack,
   IconButton,
@@ -27,60 +28,92 @@ const Navbar = () => {
   return (
     <Flex
       width="100%"
-      px="24px"
-      py="12px"
-      justifyContent="space-between"
+      justifyContent="center"
       boxShadow={colorMode === "light" ? "rgba(0, 0, 0, .05) 0px 1px 2px" : "rgba(255, 255, 255, .1) 0px 1px 2px"}
     >
-      <Image
-        alt="FedeNrg Logo"
-        height={10}
-        objectFit="cover"
-        src={logoSrc}
-      />
-      <HStack spacing={8}>
-        <NextLink href="/dashboard">Dashboard</NextLink>
-        <NextLink href="/garage">Garage</NextLink>
-        <NextLink href="/crypto">Crypto</NextLink>
-        <NextLink href="/memory">Memory</NextLink>
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            aria-label='Settings'
-            icon={<SettingsIcon />}
-            variant='ghost'
-          />
-          <MenuList>
-            <MenuItem
-              icon={colorMode === "light" ? <MoonIcon/> : <SunIcon />}
-              onClick={toggleColorMode}>
-              Toggle Color Mode
-            </MenuItem>
-            <MenuDivider />
-            <MenuOptionGroup
-              defaultValue="it"
-              title="Language"
-              type="radio">
-              <MenuItemOption
-                value="it"
-                onClick={() => i18n.changeLanguage("it")}>
-                Italian
-              </MenuItemOption>
-              <MenuItemOption
-                value="en"
-                onClick={() => i18n.changeLanguage("en")}>
-                English
-              </MenuItemOption>
-            </MenuOptionGroup>
-            <MenuDivider />
-            <MenuItem
-              icon={<CloseIcon />}
-              onClick={() => signOut()}>
-              Sign Out
-            </MenuItem>
-          </MenuList>
-        </Menu>
-      </HStack>
+      <Flex
+        width="80%"
+        px="24px"
+        py="12px"
+        justifyContent="space-between"
+      >
+        <Image
+          alt="FedeNrg Logo"
+          height={10}
+          objectFit="cover"
+          src={logoSrc}
+        />
+        <HStack spacing={8}>
+          <NextLink href="/dashboard">
+            <Button
+              fontWeight="normal"
+              variant="ghost">
+              Dashboard
+            </Button>
+          </NextLink>
+          <NextLink href="/garage">
+            <Button
+              fontWeight="normal"
+              variant="ghost">
+              Garage
+            </Button>
+          </NextLink>
+          <NextLink href="/crypto">
+            <Button
+              fontWeight="normal"
+              variant="ghost">
+              Crypto
+            </Button>
+          </NextLink>
+          <NextLink href="/memory">
+            <Button
+              fontWeight="normal"
+              variant="ghost">
+              Memory
+            </Button>
+          </NextLink>
+        </HStack>
+        <HStack spacing={4}>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label='Settings'
+              icon={<SettingsIcon />}
+              variant='ghost'
+            />
+            <MenuList>
+              <MenuItem
+                icon={colorMode === "light" ? <MoonIcon/> : <SunIcon />}
+                onClick={toggleColorMode}>
+                Toggle Color Mode
+              </MenuItem>
+              <MenuDivider />
+              <MenuOptionGroup
+                defaultValue="it"
+                title="Language"
+                type="radio">
+                <MenuItemOption
+                  value="it"
+                  onClick={() => i18n.changeLanguage("it")}>
+                  Italian
+                </MenuItemOption>
+                <MenuItemOption
+                  value="en"
+                  onClick={() => i18n.changeLanguage("en")}>
+                  English
+                </MenuItemOption>
+              </MenuOptionGroup>
+              <MenuDivider />
+              <MenuItem
+                icon={<CloseIcon />}
+                onClick={() => signOut()}>
+                Sign Out
+              </MenuItem>
+            </MenuList>
+          </Menu>
+          <Avatar name='Kent Dodds' src='https://bit.ly/kent-c-dodds' />
+        </HStack>
+      </Flex>
     </Flex>
   );
 };
