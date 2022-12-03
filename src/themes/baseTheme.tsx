@@ -1,4 +1,4 @@
-// import type { ComponentStyleConfig} from "@chakra-ui/react";
+import type { ComponentStyleConfig} from "@chakra-ui/react";
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 
 const colors = {
@@ -46,14 +46,14 @@ const fonts = {
 
 };
 
-/*const Button: ComponentStyleConfig = {
+const Button: ComponentStyleConfig = {
   baseStyle: {
     fontWeight: "normal",
   },
-};*/
+};
 
 const components = {
-  // Button,
+  Button,
 };
 
 const config: ThemeConfig = {
@@ -62,7 +62,10 @@ const config: ThemeConfig = {
 };
 
 const baseTheme = extendTheme({
-  colors, fonts, components, config,
+  colors,
+  // components,
+  fonts,
+  config,
 });
 
 export default baseTheme;
