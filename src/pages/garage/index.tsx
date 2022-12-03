@@ -11,6 +11,7 @@ import { NavbarLayout } from "layouts/NavbarLayout";
 const Garage = () => {
   const { t } = useTranslation("common");
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Head>
