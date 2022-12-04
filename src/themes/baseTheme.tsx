@@ -1,9 +1,9 @@
-import type { ComponentStyleConfig} from "@chakra-ui/react";
+import type { ComponentStyleConfig } from "@chakra-ui/react";
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 
 const colors = {
   primary: {
-    50:  "#F7E6FF",
+    50: "#F7E6FF",
     100: "#E9C0FE",
     200: "#DB95FF",
     300: "#CC66FF",
@@ -15,7 +15,7 @@ const colors = {
     900: "#2B18D2",
   },
   secondary: {
-    50:  "#F0FFE7",
+    50: "#F0FFE7",
     100: "#D8FFC2",
     200: "#BCFF98",
     300: "#99FF66",
@@ -27,7 +27,7 @@ const colors = {
     900: "#009600",
   },
   tertiary: {
-    50:  "#FFF3DA",
+    50: "#FFF3DA",
     100: "#FFE0A4",
     200: "#FFCC66",
     300: "#FEB71D",

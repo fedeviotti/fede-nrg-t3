@@ -9,7 +9,7 @@ import {
   CardBody,
   Divider,
   CardFooter,
-  Button
+  Button,
 } from "@chakra-ui/react";
 import type { Vehicle } from "@prisma/client";
 import { useVehicleCardImage } from "components/garage/hooks/useVehicleCardImage";
@@ -17,14 +17,14 @@ import { useVehicleTagColor } from "components/garage/hooks/useVehicleTagColor";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-  vehicle: Vehicle & {type: {name: string | null}};
-}
+  vehicle: Vehicle & { type: { name: string | null } };
+};
 
-export const VehicleCard = ({vehicle}: Props) => {
+export const VehicleCard = ({ vehicle }: Props) => {
   const { t } = useTranslation("common");
   const imageSrc = useVehicleCardImage(vehicle.type.name);
   const tagColor = useVehicleTagColor(vehicle.type.name);
-  
+
   return (
     <Card maxW="sm">
       <CardBody>
@@ -32,7 +32,6 @@ export const VehicleCard = ({vehicle}: Props) => {
           src={imageSrc}
           alt="Bicycle"
           borderRadius="lg"
-          
         />
         <Stack mt="6" spacing="3">
           <Heading size="md">

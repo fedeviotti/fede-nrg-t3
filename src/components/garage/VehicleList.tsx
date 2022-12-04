@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Box, Grid, GridItem, Spinner
+  Box, Grid, GridItem, Spinner,
 } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
 import { VehicleCard } from "components/garage/VehicleCard";
@@ -15,7 +15,7 @@ export const VehicleList = () => {
   );
 
   if (isError) return <Box>An error occurred.</Box>;
-  if (isLoading) return <Spinner size='lg' />;
+  if (isLoading) return <Spinner size="lg" />;
 
   return (
     <Box width={PAGE_WIDTH}>
