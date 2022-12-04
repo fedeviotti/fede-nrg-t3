@@ -1,19 +1,23 @@
 import React from "react";
 import {
-  Box, Grid, GridItem,
+  Box, Grid, GridItem, Spinner
 } from "@chakra-ui/react";
+import { trpc } from "utils/trpc";
 import { VehicleCard } from "components/garage/VehicleCard";
-import type { ExtendedVehicle } from "components/garage/types/vehicle";
+import { useIsAuthenticated } from "hooks/useIsAuthenticated";
 
 export const VehicleList = () => {
-  const vehicles: ExtendedVehicle[] = [];
+  const sessionData = useIsAuthenticated();
+  const { data: vehicles, isLoading, isError } = trpc.garage.getVehicles.useQuery(
+    { ownerId: sessionData?.user?.id },
+    { enabled: sessionData?.user !== undefined },
+  );
 
-  // if (error) return <Box>An error occurred.</Box>;
-  if (!vehicles) return <Box>Loading ...</Box>;
+  if (isError) return <Box>An error occurred.</Box>;
+  if (isLoading) return <Spinner size='lg' />;
 
   return (
     <Grid templateColumns="repeat(4, 1fr)" gap={12}>
-      {/* <pre>{JSON.stringify(vehicles, null, 2)}</pre> */}
       {vehicles?.map((vehicle) => (
         <GridItem key={vehicle.id}>
           <VehicleCard key={Number(vehicle.id)} vehicle={vehicle} />
