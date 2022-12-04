@@ -56,8 +56,8 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
   ) => {
     const data = "data";
     const error = { message: "error" };
-    console.log("values", values)
-    /*const { data, error } = await supabase
+    console.log("values", values);
+    /* const { data, error } = await supabase
       .from("vehicles")
       .insert([
         {
@@ -69,7 +69,7 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
           type_id: Number(values.type),
           owner_id: user?.id,
         },
-      ]);*/
+      ]); */
     if (data) {
       toast({
         title: t("garage.vehicle.create_form.toast.title"),
