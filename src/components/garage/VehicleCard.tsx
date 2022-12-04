@@ -1,6 +1,15 @@
 import React from "react";
 import {
-  Flex, Center, Heading, Image, Stack, Tag, useColorModeValue,
+  Heading,
+  Image,
+  Stack,
+  Tag,
+  Text,
+  Card,
+  CardBody,
+  Divider,
+  CardFooter,
+  Button
 } from "@chakra-ui/react";
 import type { Vehicle } from "@prisma/client";
 import { useVehicleCardImage } from "components/garage/hooks/useVehicleCardImage";
@@ -13,41 +22,41 @@ type Props = {
 export const VehicleCard = ({vehicle}: Props) => {
   const imageSrc = useVehicleCardImage(vehicle.type.name);
   const tagColor = useVehicleTagColor(vehicle.type.name);
-
+  
   return (
-    <Center>
-      <Flex
-        direction="column"
-        alignItems="center"
-        role="group"
-        p={6}
-        minWidth="200px"
-        bg={useColorModeValue("white", "gray.800")}
-        pos="relative"
-        zIndex={1}
-        border="1px solid"
-        borderColor={useColorModeValue("blackAlpha.300", "whiteAlpha.300")}
-        borderRadius="lg"
-      >
+    <Card maxW="sm">
+      <CardBody>
         <Image
-          boxSize="150px"
-          alt="Vehicle detail card"
-          rounded="lg"
-          objectFit="cover"
           src={imageSrc}
+          alt="Bicycle"
+          borderRadius="lg"
+          
         />
-        <Stack pt={8} align="center" spacing={6}>
-          {vehicle.type.name
-            && (
-            <Tag size="md" key="md" variant="solid" colorScheme={tagColor} textTransform="uppercase">
-              {vehicle.type.name}
-            </Tag>
-            )}
-          <Heading fontSize="2xl" fontFamily="body" fontWeight={500}>
+        <Stack mt="6" spacing="3">
+          <Heading size="md">
             {vehicle.name}
           </Heading>
+          <Text>
+            {vehicle.description}
+          </Text>
+          <Tag
+            size="md"
+            key="md"
+            variant="solid"
+            colorScheme={tagColor}
+            textTransform="uppercase"
+            alignSelf="flex-end"
+          >
+            {vehicle.type.name}
+          </Tag>
         </Stack>
-      </Flex>
-    </Center>
+      </CardBody>
+      <Divider />
+      <CardFooter justifyContent="center">
+        <Button variant="ghost" colorScheme="primary">
+          Add maintenance
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
