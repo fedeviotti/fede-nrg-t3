@@ -1,7 +1,7 @@
 {
   "garage": {
     "title": "Gestione Veicoli",
-    "cta": "Aggiungi un veicolo",
+    "cta_add": "Aggiungi un veicolo",
     "vehicle": {
       "create_form": {
         "title": "Aggiungi Veicolo",

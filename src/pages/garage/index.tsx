@@ -21,7 +21,7 @@ const Garage = () => {
       </Head>
       <Flex flexDirection="column" gap={12} alignItems="center">
         <Heading as="h2" size="xl" fontWeight="semibold">{t("garage.title")}</Heading>
-        <Button onClick={onOpen}>{t("garage.cta")}</Button>
+        <Button onClick={onOpen}>{t("garage.cta_add")}</Button>
         <VehicleList />
       </Flex>
       <VehicleFormModal isOpen={isOpen} onClose={onClose} />

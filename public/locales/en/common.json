@@ -1,7 +1,7 @@
 {
   "garage": {
     "title": "Garage Manager",
-    "cta": "Add a vehicle",
+    "cta_add": "Add a vehicle",
     "vehicle": {
       "create_form": {
         "title": "Add Vehicle",
