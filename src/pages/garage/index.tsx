@@ -4,7 +4,7 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { VehicleList } from "components/garage/VehicleList";
-import { VehicleForm } from "components/garage/VehicleForm";
+import { VehicleFormModal } from "components/garage/VehicleFormModal";
 import { useTranslation } from "react-i18next";
 import { NavbarLayout } from "layouts/NavbarLayout";
 
@@ -24,7 +24,7 @@ const Garage = () => {
         <Button onClick={onOpen}>{t("garage.cta")}</Button>
         <VehicleList />
       </Flex>
-      <VehicleForm isOpen={isOpen} onClose={onClose} />
+      <VehicleFormModal isOpen={isOpen} onClose={onClose} />
     </>
   );
 };

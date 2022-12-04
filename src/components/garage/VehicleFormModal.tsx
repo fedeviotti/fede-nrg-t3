@@ -47,7 +47,7 @@ type Props = {
   onClose: () => void;
 };
 
-export const VehicleForm = ({ isOpen, onClose }: Props) => {
+export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
   const { t } = useTranslation("common");
   const toast = useToast();
 
