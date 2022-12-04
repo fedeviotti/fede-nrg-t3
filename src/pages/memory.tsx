@@ -9,7 +9,7 @@ const Memory: NextPageWithLayout = () => (
     <Head>
       <title>Memory game</title>
       <meta name="description" content="Memory Game" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/public/favicon.ico" />
     </Head>
     <Box display="flex" flexDirection="column" gap="16px" alignItems="center">
       <Heading as="h2" size="xl" fontWeight="semibold">Memory Game</Heading>
