@@ -1,4 +1,24 @@
 {
-  "title": "The Lord of the Rings: The Fellowship of the Ring",
+  "garage": {
+    "title": "Garage Manager",
+    "cta": "Add a vehicle",
+    "vehicle": {
+      "create_form": {
+        "title": "Add Vehicle",
+        "field": {
+          "name": "Name",
+          "description": "Description",
+          "type": "Type"
+        },
+        "button": {
+          "cancel": "Cancel",
+          "add": "Add"
+        }
+      },
+      "card": {
+        "cta_maintenance": "Maintenance"
+      }
+    }
+  },
   "footer": "Made with ❤️ and ☕️ by FEDENRG"
 }
