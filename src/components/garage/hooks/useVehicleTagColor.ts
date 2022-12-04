@@ -1,5 +1,3 @@
-import type { VehicleType } from "@prisma/client";
-
 type TagColor = {
   type: string;
   color: string;
@@ -16,7 +14,7 @@ const VEHICLE_IMAGES: TagColor[] = [
   },
 ];
 
-export function useTagColor(type: VehicleType) {
-  const { color } = VEHICLE_IMAGES.find((_color) => _color.type === type.name) || {};
+export function useVehicleTagColor(type: string | null) {
+  const { color } = VEHICLE_IMAGES.find((_color) => _color.type === type) || {};
   return color || "brand";
 }

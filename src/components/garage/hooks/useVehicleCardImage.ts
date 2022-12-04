@@ -1,4 +1,3 @@
-import type { VehicleType } from "@prisma/client";
 import BIKE_IMAGE_DARK from "assets/garage/bicycle-9628-dark.svg";
 import BIKE_IMAGE_LIGHT from "assets/garage/bicycle-9628-light.svg";
 import CAR_IMAGE_DARK from "assets/garage/car-2899-dark.svg";
@@ -30,8 +29,8 @@ const VEHICLE_IMAGES: VehicleImage[] = [
   },
 ];
 
-export function useVehicleCardImage(type: VehicleType) {
-  const { images } = VEHICLE_IMAGES.find((_image) => _image.type === type.name) || {};
+export function useVehicleCardImage(type: string | null) {
+  const { images } = VEHICLE_IMAGES.find((_image) => _image.type === type) || {};
   const imageSrc = useColorModeValue(images?.light.src, images?.dark.src);
   return imageSrc;
 }
