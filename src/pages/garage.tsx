@@ -17,7 +17,7 @@ const Garage = () => {
       <Head>
         <title>{t("garage.title")}</title>
         <meta name="description" content={t("garage.title") || "Garage"} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <Flex flexDirection="column" gap={12} alignItems="center">
         <Heading as="h2" size="xl" fontWeight="semibold">{t("garage.title")}</Heading>
