@@ -1,4 +1,24 @@
 {
-  "title": "Il Signore degli Anelli - La Compagnia dell'Anello",
+  "garage": {
+    "title": "Gestione Veicoli",
+    "cta_add": "Aggiungi un veicolo",
+    "vehicle": {
+      "create_form": {
+        "title": "Aggiungi Veicolo",
+        "field": {
+          "name": "Nome",
+          "description": "Descrizione",
+          "type": "Tipologia"
+        },
+        "button": {
+          "cancel": "Annulla",
+          "cta_add": "Aggiungi"
+        }
+      },
+      "card": {
+        "cta_maintenance": "Manutenzione"
+      }
+    }
+  },
   "footer": "Fatto con ❤️ and ☕️ data FEDENRG"
 }

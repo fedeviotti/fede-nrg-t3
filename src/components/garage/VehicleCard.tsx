@@ -14,12 +14,14 @@ import {
 import type { Vehicle } from "@prisma/client";
 import { useVehicleCardImage } from "components/garage/hooks/useVehicleCardImage";
 import { useVehicleTagColor } from "components/garage/hooks/useVehicleTagColor";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   vehicle: Vehicle & {type: {name: string | null}};
 }
 
 export const VehicleCard = ({vehicle}: Props) => {
+  const { t } = useTranslation("common");
   const imageSrc = useVehicleCardImage(vehicle.type.name);
   const tagColor = useVehicleTagColor(vehicle.type.name);
   
@@ -54,7 +56,7 @@ export const VehicleCard = ({vehicle}: Props) => {
       <Divider />
       <CardFooter justifyContent="center">
         <Button variant="ghost" colorScheme="primary">
-          Add maintenance
+          {t("garage.vehicle.card.cta_maintenance")}
         </Button>
       </CardFooter>
     </Card>
