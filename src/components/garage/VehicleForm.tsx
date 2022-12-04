@@ -127,7 +127,7 @@ export const VehicleForm = ({ isOpen, onClose }: Props) => {
               </ModalBody>
               <ModalFooter>
                 <Button mr={3} onClick={onClose}>
-                  Close
+                  {t("garage.vehicle.create_form.button.cancel")}
                 </Button>
                 <Button
                   type="submit"
@@ -135,7 +135,7 @@ export const VehicleForm = ({ isOpen, onClose }: Props) => {
                   isLoading={isSubmitting}
                   isDisabled={!isValid || !dirty}
                 >
-                  {t("garage.vehicle.create_form.cta")}
+                  {t("garage.vehicle.create_form.button.add")}
                 </Button>
               </ModalFooter>
             </ModalContent>
