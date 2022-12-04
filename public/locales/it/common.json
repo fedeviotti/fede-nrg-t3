@@ -12,7 +12,7 @@
         },
         "button": {
           "cancel": "Annulla",
-          "add": "Aggiungi"
+          "cta_add": "Aggiungi"
         }
       },
       "card": {

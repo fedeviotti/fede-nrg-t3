@@ -12,7 +12,7 @@
         },
         "button": {
           "cancel": "Cancel",
-          "add": "Add"
+          "cta_add": "Add"
         }
       },
       "card": {

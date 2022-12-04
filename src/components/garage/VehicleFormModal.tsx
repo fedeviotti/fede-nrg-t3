@@ -135,7 +135,7 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
                   isLoading={isSubmitting}
                   isDisabled={!isValid || !dirty}
                 >
-                  {t("garage.vehicle.create_form.button.add")}
+                  {t("garage.vehicle.create_form.button.cta_add")}
                 </Button>
               </ModalFooter>
             </ModalContent>
