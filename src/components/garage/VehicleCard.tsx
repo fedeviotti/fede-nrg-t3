@@ -2,17 +2,17 @@ import React from "react";
 import {
   Flex, Center, Heading, Image, Stack, Tag, useColorModeValue,
 } from "@chakra-ui/react";
-import type { ExtendedVehicle } from "components/garage/types/vehicle";
+import type { Vehicle } from "@prisma/client";
 import { useVehicleCardImage } from "components/garage/hooks/useVehicleCardImage";
-import { useTagColor } from "components/garage/hooks/useTagColor";
+import { useVehicleTagColor } from "components/garage/hooks/useVehicleTagColor";
 
 type Props = {
-  vehicle: ExtendedVehicle;
-};
+  vehicle: Vehicle & {type: {name: string | null}};
+}
 
-export const VehicleCard = ({ vehicle }: Props) => {
-  const imageSrc = useVehicleCardImage(vehicle.type);
-  const tagColor = useTagColor(vehicle.type);
+export const VehicleCard = ({vehicle}: Props) => {
+  const imageSrc = useVehicleCardImage(vehicle.type.name);
+  const tagColor = useVehicleTagColor(vehicle.type.name);
 
   return (
     <Center>
