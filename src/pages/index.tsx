@@ -1,12 +1,10 @@
 import React from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
-import NextLink from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import { useRouter } from "next/router";
 import { Box, Button, Center, Heading, Stack, Text } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next";
 import { trpc } from "utils/trpc";
 
 // const BACKGROUND_IMAGES = [
@@ -16,7 +14,6 @@ import { trpc } from "utils/trpc";
 // ]
 
 const Home: NextPage = () => {
-  const { t } = useTranslation("common");
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
   return (
@@ -42,10 +39,6 @@ const Home: NextPage = () => {
                   Nrg
                 </Heading>
               </Stack>
-              <Heading as={"h3"} size="lg" color="white">{t("title")}</Heading>
-              <NextLink href="/dashboard">
-                <Text color="white" fontSize="xl">Dashboard</Text>
-              </NextLink>
               <Text color="white" fontSize="xl">
                 {hello.data ? hello.data.greeting : "Loading tRPC query..."}
               </Text>

@@ -3,11 +3,9 @@ import { Box, Center, Text } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
 import { useIsAuthenticated } from "hooks/useIsAuthenticated";
 import { NavbarLayout } from "layouts/NavbarLayout";
-import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
   const sessionData = useIsAuthenticated();
-  const { t } = useTranslation("common");
 
   const { data: secretMessage } = trpc.auth.getSecretMessage.useQuery(
     undefined, // no input
@@ -15,21 +13,14 @@ const Dashboard = () => {
   );
 
   return (
-    <>
-      <Box>
-        <Center>
-          <Text>
-            {sessionData && `Logged in as ${sessionData.user?.name || sessionData.user?.email}`}
-            {secretMessage && ` - ${secretMessage}`}
-          </Text>
-        </Center>
-      </Box>
-      <Box>
+    <Box>
+      <Center>
         <Text>
-          {t("title")}
+          {sessionData && `Logged in as ${sessionData.user?.name || sessionData.user?.email}`}
+          {secretMessage && ` - ${secretMessage}`}
         </Text>
-      </Box>
-    </>
+      </Center>
+    </Box>
   )
 }
 
