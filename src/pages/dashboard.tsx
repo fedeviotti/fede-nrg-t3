@@ -21,8 +21,8 @@ const Dashboard = () => {
         </Text>
       </Center>
     </Box>
-  )
-}
+  );
+};
 
 Dashboard.getLayout = function getLayout(memory: React.ReactElement) {
   return (

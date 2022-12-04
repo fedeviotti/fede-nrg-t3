@@ -2,7 +2,7 @@ import React from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-export function useIsAuthenticated(){
+export function useIsAuthenticated() {
   const { data: sessionData, status } = useSession();
   const router = useRouter();
 

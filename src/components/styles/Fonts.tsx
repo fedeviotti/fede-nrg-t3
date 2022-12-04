@@ -17,6 +17,4 @@ import "@fontsource/poppins/700-italic.css";
 import "@fontsource/poppins/800-italic.css";
 import "@fontsource/poppins/900-italic.css";
 
-export const Fonts = () => {
-  return null;
-}
+export const Fonts = () => null;
