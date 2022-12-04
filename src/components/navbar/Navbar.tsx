@@ -11,9 +11,11 @@ import {
   MenuList,
   MenuOptionGroup,
   useColorMode,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { CloseIcon, MoonIcon, SettingsIcon, SunIcon } from "@chakra-ui/icons";
+import {
+  CloseIcon, MoonIcon, SettingsIcon, SunIcon,
+} from "@chakra-ui/icons";
 import NextLink from "next/link";
 import LOGO_LIGHT from "assets/FEDENRG_LOGO_LIGHT.png";
 import LOGO_DARK from "assets/FEDENRG_LOGO_DARK.png";
@@ -48,28 +50,32 @@ const Navbar = () => {
           <NextLink href="/dashboard">
             <Button
               fontWeight="normal"
-              variant="ghost">
+              variant="ghost"
+            >
               Dashboard
             </Button>
           </NextLink>
           <NextLink href="/garage">
             <Button
               fontWeight="normal"
-              variant="ghost">
+              variant="ghost"
+            >
               Garage
             </Button>
           </NextLink>
           <NextLink href="/crypto">
             <Button
               fontWeight="normal"
-              variant="ghost">
+              variant="ghost"
+            >
               Crypto
             </Button>
           </NextLink>
           <NextLink href="/memory">
             <Button
               fontWeight="normal"
-              variant="ghost">
+              variant="ghost"
+            >
               Memory
             </Button>
           </NextLink>
@@ -78,41 +84,46 @@ const Navbar = () => {
           <Menu>
             <MenuButton
               as={IconButton}
-              aria-label='Settings'
+              aria-label="Settings"
               icon={<SettingsIcon />}
-              variant='ghost'
+              variant="ghost"
             />
             <MenuList>
               <MenuItem
-                icon={colorMode === "light" ? <MoonIcon/> : <SunIcon />}
-                onClick={toggleColorMode}>
+                icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+                onClick={toggleColorMode}
+              >
                 Toggle Color Mode
               </MenuItem>
               <MenuDivider />
               <MenuOptionGroup
                 defaultValue="it"
                 title="Language"
-                type="radio">
+                type="radio"
+              >
                 <MenuItemOption
                   value="it"
-                  onClick={() => i18n.changeLanguage("it")}>
+                  onClick={() => i18n.changeLanguage("it")}
+                >
                   Italian
                 </MenuItemOption>
                 <MenuItemOption
                   value="en"
-                  onClick={() => i18n.changeLanguage("en")}>
+                  onClick={() => i18n.changeLanguage("en")}
+                >
                   English
                 </MenuItemOption>
               </MenuOptionGroup>
               <MenuDivider />
               <MenuItem
                 icon={<CloseIcon />}
-                onClick={() => signOut()}>
+                onClick={() => signOut()}
+              >
                 Sign Out
               </MenuItem>
             </MenuList>
           </Menu>
-          <Avatar name='Kent Dodds' src='https://bit.ly/kent-c-dodds' />
+          <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
         </HStack>
       </Flex>
     </Flex>
