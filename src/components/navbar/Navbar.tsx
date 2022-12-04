@@ -13,12 +13,13 @@ import {
   useColorMode,
   useColorModeValue
 } from "@chakra-ui/react";
+import { CloseIcon, MoonIcon, SettingsIcon, SunIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import LOGO_LIGHT from "assets/FEDENRG_LOGO_LIGHT.png";
 import LOGO_DARK from "assets/FEDENRG_LOGO_DARK.png";
 import { useTranslation } from "react-i18next";
 import { signOut } from "next-auth/react";
-import { CloseIcon, MoonIcon, SettingsIcon, SunIcon } from "@chakra-ui/icons";
+import { PAGE_WIDTH } from "constants/layout";
 
 const Navbar = () => {
   const { i18n } = useTranslation();
@@ -32,7 +33,7 @@ const Navbar = () => {
       boxShadow={colorMode === "light" ? "rgba(0, 0, 0, .05) 0px 1px 2px" : "rgba(255, 255, 255, .1) 0px 1px 2px"}
     >
       <Flex
-        width="80%"
+        width={PAGE_WIDTH}
         px="24px"
         py="12px"
         justifyContent="space-between"

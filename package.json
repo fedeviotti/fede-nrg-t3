@@ -28,6 +28,7 @@
     "@trpc/next": "10.4.3",
     "@trpc/react-query": "10.4.3",
     "@trpc/server": "10.4.3",
+    "formik": "^2.2.9",
     "framer-motion": "^7.0.0",
     "i18next": "^22.0.6",
     "next": "13.0.6",
@@ -37,6 +38,7 @@
     "react-dom": "18.2.0",
     "react-i18next": "^12.0.0",
     "superjson": "1.11.0",
+    "yup": "^0.32.11",
     "zod": "^3.18.0"
   },
   "devDependencies": {
