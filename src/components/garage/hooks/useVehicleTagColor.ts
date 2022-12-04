@@ -15,6 +15,6 @@ const VEHICLE_IMAGES: TagColor[] = [
 ];
 
 export function useVehicleTagColor(type: string | null) {
-  const { color } = VEHICLE_IMAGES.find((_color) => _color.type === type) || {};
-  return color || "brand";
+  const result = VEHICLE_IMAGES.find((_color) => _color.type === type);
+  return result?.color || "brand";
 }

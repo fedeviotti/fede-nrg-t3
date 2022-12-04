@@ -1,36 +1,22 @@
-import BIKE_IMAGE_DARK from "assets/garage/bicycle-9628-dark.svg";
-import BIKE_IMAGE_LIGHT from "assets/garage/bicycle-9628-light.svg";
-import CAR_IMAGE_DARK from "assets/garage/car-2899-dark.svg";
-import CAR_IMAGE_LIGHT from "assets/garage/car-2899-light.svg";
-import { useColorModeValue } from "@chakra-ui/react";
+type VehicleType = "bike" | "car";
 
 type VehicleImage = {
-  type: string;
-  images: {
-    light: any;
-    dark: any;
-  };
+  type: VehicleType;
+  imageSrc: string;
 };
 
 const VEHICLE_IMAGES: VehicleImage[] = [
   {
     type: "bike",
-    images: {
-      light: BIKE_IMAGE_LIGHT,
-      dark: BIKE_IMAGE_DARK,
-    },
+    imageSrc: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
   },
   {
     type: "car",
-    images: {
-      light: CAR_IMAGE_LIGHT,
-      dark: CAR_IMAGE_DARK,
-    },
+    imageSrc: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
   },
 ];
 
 export function useVehicleCardImage(type: string | null) {
-  const { images } = VEHICLE_IMAGES.find((_image) => _image.type === type) || {};
-  const imageSrc = useColorModeValue(images?.light.src, images?.dark.src);
-  return imageSrc;
+  const result = VEHICLE_IMAGES.find((_image) => _image.type === type);
+  return result?.imageSrc;
 }
