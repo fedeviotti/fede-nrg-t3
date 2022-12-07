@@ -17,29 +17,32 @@ import {
   Field, Form, Formik,
 } from "formik";
 import { defaultToastOptions } from "constants/defaultToastOptions";
+import { useIsAuthenticated } from "hooks/useIsAuthenticated";
+import { trpc } from "utils/trpc";
 
 type VehicleFormValues = {
   name: string;
   description: string;
-  type: string;
+  typeId: number;
 };
 
-const createVehicleSchema = yup.object().shape({
+const vehicleSchema = yup.object().shape({
   name: yup
     .string()
     .required(),
   description: yup
     .string()
     .required(),
-  type: yup
-    .string()
-    .required(),
+  typeId: yup
+    .number()
+    .required()
+    .positive(),
 });
 
 const initialValues = {
   name: "",
   description: "",
-  type: "",
+  typeId: 0,
 };
 
 type Props = {
@@ -49,45 +52,46 @@ type Props = {
 
 export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
   const { t } = useTranslation("common");
+  const sessionData = useIsAuthenticated();
+  const utils = trpc.useContext();
+  const insertVehicle = trpc.garage.insertVehicle.useMutation();
   const toast = useToast();
+
+  const onSuccessHandler = React.useCallback(() => {
+    utils.garage.getVehiclesByOwner.invalidate({ ownerId: sessionData?.user?.id });
+    toast({
+      ...defaultToastOptions,
+      title: t("garage.vehicle.create_form.toast.title"),
+      description: t("garage.vehicle.create_form.toast.success"),
+      status: "success",
+    });
+    onClose();
+  }, [utils.garage.getVehiclesByOwner, sessionData?.user?.id, toast, t, onClose]);
+
+  const onErrorHandler = React.useCallback(() => {
+    toast({
+      ...defaultToastOptions,
+      title: t("garage.vehicle.create_form.toast.title"),
+      description: t("garage.vehicle.create_form.toast.error"),
+      status: "error",
+    });
+  }, [t, toast]);
 
   const handleSubmit = React.useCallback(async (
     values: VehicleFormValues,
   ) => {
-    const data = "data";
-    const error = { message: "error" };
-    console.log("values", values);
-    /* const { data, error } = await supabase
-      .from("vehicles")
-      .insert([
-        {
-          name: values.name,
-          description: values.description,
-          created_at: new Date(),
-          updated_at: new Date(),
-          is_owned: true,
-          type_id: Number(values.type),
-          owner_id: user?.id,
-        },
-      ]); */
-    if (data) {
-      toast({
-        title: t("garage.vehicle.create_form.toast.title"),
-        description: t("garage.vehicle.create_form.toast.success"),
-        status: "success",
-        ...defaultToastOptions,
-      });
-      onClose();
-    }
-    if (error) {
-      toast({
-        title: t("garage.vehicle.create_form.toast.title"),
-        description: error.message || t("garage.vehicle.create_form.toast.error"),
-        status: "error",
-        ...defaultToastOptions,
+    if (sessionData?.user?.id) {
+      const parsedVehicle = await vehicleSchema.validate(values);
+      insertVehicle.mutate({
+        ...parsedVehicle,
+        name: parsedVehicle.name,
+        ownerId: sessionData.user.id,
+      }, {
+        onSuccess: onSuccessHandler,
+        onError: onErrorHandler,
       });
     }
-  }, [onClose, t, toast]);
+  }, [insertVehicle, onErrorHandler, onSuccessHandler, sessionData?.user?.id]);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -95,7 +99,7 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
-        validationSchema={createVehicleSchema}
+        validationSchema={vehicleSchema}
         validateOnMount
       >
         {({ isSubmitting, isValid, dirty }) => (
@@ -117,11 +121,11 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
                   />
                   <Field
                     as={Select}
-                    name="type"
+                    name="typeId"
                     placeholder={t("garage.vehicle.create_form.field.type")}
                   >
-                    <option value="7">Bike</option>
-                    <option value="8">Car</option>
+                    <option value={1}>Bike</option>
+                    <option value={2}>Car</option>
                   </Field>
                 </Flex>
               </ModalBody>

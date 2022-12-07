@@ -26,20 +26,22 @@ export const VehicleCard = ({ vehicle }: Props) => {
   const tagColor = useVehicleTagColor(vehicle.type.name);
 
   return (
-    <Card maxW="sm">
-      <CardBody>
+    <Card maxW="sm" minH="md">
+      <CardBody display="flex" flexDirection="column">
         <Image
           src={imageSrc}
           alt="Bicycle"
           borderRadius="lg"
         />
-        <Stack mt="6" spacing="3">
-          <Heading size="md">
-            {vehicle.name}
-          </Heading>
-          <Text>
-            {vehicle.description}
-          </Text>
+        <Stack mt="6" flexGrow={1} justifyContent="space-between">
+          <Stack>
+            <Heading size="md">
+              {vehicle.name}
+            </Heading>
+            <Text noOfLines={3}>
+              {vehicle.description}
+            </Text>
+          </Stack>
           <Tag
             size="md"
             key="md"
@@ -47,6 +49,7 @@ export const VehicleCard = ({ vehicle }: Props) => {
             colorScheme={tagColor}
             textTransform="uppercase"
             alignSelf="flex-end"
+            justifySelf="flex-end"
           >
             {vehicle.type.name}
           </Tag>
