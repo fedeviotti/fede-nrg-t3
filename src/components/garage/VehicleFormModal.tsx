@@ -35,7 +35,8 @@ const vehicleSchema = yup.object().shape({
     .required(),
   typeId: yup
     .number()
-    .required(),
+    .required()
+    .positive(),
 });
 
 const initialValues = {
@@ -52,10 +53,12 @@ type Props = {
 export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
   const { t } = useTranslation("common");
   const sessionData = useIsAuthenticated();
+  const utils = trpc.useContext();
   const insertVehicle = trpc.garage.insertVehicle.useMutation();
   const toast = useToast();
 
   const onSuccessHandler = React.useCallback(() => {
+    utils.garage.getVehiclesByOwner.invalidate({ ownerId: sessionData?.user?.id });
     toast({
       ...defaultToastOptions,
       title: t("garage.vehicle.create_form.toast.title"),
@@ -63,7 +66,7 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
       status: "success",
     });
     onClose();
-  }, [onClose, toast, t]);
+  }, [utils.garage.getVehiclesByOwner, sessionData?.user?.id, toast, t, onClose]);
 
   const onErrorHandler = React.useCallback(() => {
     toast({
