@@ -16,4 +16,12 @@ export const garageRouter = router({
         },
       },
     })),
+  insertVehicle: protectedProcedure
+    .input(z.object({
+      name: z.string(),
+      description: z.string().nullish(),
+      typeId: z.number(),
+      ownerId: z.string(),
+    }))
+    .mutation(({ ctx, input }) => ctx.prisma.vehicle.create({ data: input })),
 });
