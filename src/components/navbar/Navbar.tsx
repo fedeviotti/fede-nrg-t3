@@ -122,7 +122,7 @@ const Navbar = () => {
               </MenuItem>
             </MenuList>
           </Menu>
-          <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
+          <Avatar size="sm" name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
         </HStack>
       </Flex>
     </Flex>
