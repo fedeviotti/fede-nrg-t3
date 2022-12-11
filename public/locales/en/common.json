@@ -1,10 +1,10 @@
 {
   "garage": {
     "title": "Garage Manager",
-    "cta_add": "Add a vehicle",
+    "cta_add": "Add vehicle",
     "vehicle": {
       "create_form": {
-        "title": "Add Vehicle",
+        "title": "Add vehicle",
         "field": {
           "name": "Name",
           "description": "Description",
@@ -13,6 +13,11 @@
         "button": {
           "cancel": "Cancel",
           "cta_add": "Add"
+        },
+        "toast": {
+          "title": "Add vehicle",
+          "success": "Vehicle added successfully!",
+          "error": "Error adding the vehicle."
         }
       },
       "card": {
