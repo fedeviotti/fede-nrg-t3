@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Flex, Button, Heading, useDisclosure,
+  Button, Heading, useDisclosure, Stack,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { VehicleList } from "components/garage/VehicleList";
@@ -19,11 +19,13 @@ const Garage = () => {
         <meta name="description" content={t("garage.title") || "Garage"} />
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
-      <Flex flexDirection="column" gap={12} alignItems="center">
-        <Heading as="h2" size="xl" fontWeight="semibold">{t("garage.title")}</Heading>
-        <Button onClick={onOpen}>{t("garage.cta_add")}</Button>
+      <Stack gap={8}>
+        <Stack direction="row" justifyContent="space-between">
+          <Heading as="h2" size="xl" fontWeight="semibold">{t("garage.title")}</Heading>
+          <Button variant="ghost" onClick={onOpen}>{t("garage.cta_add")}</Button>
+        </Stack>
         <VehicleList />
-      </Flex>
+      </Stack>
       <VehicleFormModal isOpen={isOpen} onClose={onClose} />
     </>
   );
