@@ -36,8 +36,7 @@ const Navbar = () => {
     >
       <Flex
         width={PAGE_WIDTH}
-        px="24px"
-        py="12px"
+        py={4}
         justifyContent="space-between"
       >
         <Image
