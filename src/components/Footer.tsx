@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 export const Footer = () => {
   const { t } = useTranslation("common");
   return (
-    <Flex minH={14} justifyContent="center" alignItems="center">
+    <Flex py={4} justifyContent="center" alignItems="center">
       {t("footer")}
     </Flex>
   );
