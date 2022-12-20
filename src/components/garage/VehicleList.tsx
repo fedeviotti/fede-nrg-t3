@@ -1,11 +1,10 @@
 import React from "react";
 import {
-  Box, Grid, GridItem, Spinner,
+  Flex, Grid, GridItem, Spinner,
 } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
 import { VehicleCard } from "components/garage/VehicleCard";
 import { useIsAuthenticated } from "hooks/useIsAuthenticated";
-import { PAGE_WIDTH } from "constants/layout";
 
 export const VehicleList = () => {
   const sessionData = useIsAuthenticated();
@@ -14,18 +13,16 @@ export const VehicleList = () => {
     { enabled: sessionData?.user !== undefined },
   );
 
-  if (isError) return <Box>An error occurred.</Box>;
-  if (isLoading) return <Spinner size="lg" />;
+  if (isError) return <Flex justifyContent="center">An error occurred.</Flex>;
+  if (isLoading) return <Flex justifyContent="center"><Spinner size="lg" /></Flex>;
 
   return (
-    <Box width={PAGE_WIDTH}>
-      <Grid templateColumns="repeat(4, 1fr)" gap={12}>
-        {vehicles?.map((vehicle) => (
-          <GridItem key={vehicle.id}>
-            <VehicleCard key={Number(vehicle.id)} vehicle={vehicle} />
-          </GridItem>
-        ))}
-      </Grid>
-    </Box>
+    <Grid templateColumns="repeat(4, 1fr)" gap={12}>
+      {vehicles?.map((vehicle) => (
+        <GridItem key={vehicle.id}>
+          <VehicleCard key={Number(vehicle.id)} vehicle={vehicle} />
+        </GridItem>
+      ))}
+    </Grid>
   );
 };

@@ -36,8 +36,7 @@ const Navbar = () => {
     >
       <Flex
         width={PAGE_WIDTH}
-        px="24px"
-        py="12px"
+        py={4}
         justifyContent="space-between"
       >
         <Image
@@ -123,7 +122,7 @@ const Navbar = () => {
               </MenuItem>
             </MenuList>
           </Menu>
-          <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
+          <Avatar size="sm" name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
         </HStack>
       </Flex>
     </Flex>

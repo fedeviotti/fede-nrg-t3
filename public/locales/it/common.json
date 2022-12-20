@@ -1,10 +1,10 @@
 {
   "garage": {
-    "title": "Gestione Veicoli",
-    "cta_add": "Aggiungi un veicolo",
+    "title": "Gestione Garage",
+    "cta_add": "Aggiungi veicolo",
     "vehicle": {
       "create_form": {
-        "title": "Aggiungi Veicolo",
+        "title": "Aggiungi veicolo",
         "field": {
           "name": "Nome",
           "description": "Descrizione",
@@ -13,6 +13,11 @@
         "button": {
           "cancel": "Annulla",
           "cta_add": "Aggiungi"
+        },
+        "toast": {
+          "title": "Aggiungi veicolo",
+          "success": "Veicolo aggiunto con successo!",
+          "error": "Errore durante l'aggiunta del veicolo."
         }
       },
       "card": {
