@@ -30,7 +30,7 @@
     "@trpc/react-query": "10.6.0",
     "@trpc/server": "10.6.0",
     "formik": "^2.2.9",
-    "framer-motion": "^7.0.0",
+    "framer-motion": "^8.0.0",
     "i18next": "^22.0.6",
     "next": "13.0.7",
     "next-auth": "^4.15.1",
