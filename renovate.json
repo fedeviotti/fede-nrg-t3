@@ -6,5 +6,14 @@
   "labels": [
     "dependencies"
   ],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "hostRules": [
+    {
+      "matchHost": "https://npm.pkg.github.com",
+      "hostType": "npm",
+      "encrypted": {
+        "token": "wcFMA/xDdHCJBTolARAAlOEgVNh3pgx1x9TM5QQgWhDxdKPZmC4GWsnf7O4924WjJsX4A6oNBtkeuXhZ/7so5BW0deqdDLhEcGywFMsSnNNCZxYYNq/hmzzahUZNzNJAmhp85EKcE225UthS1X8BW5yWXzVjdGVjd5Uv5ycZZcC72s66Wfy1y+Tbx9ODQpwXq4b0/TVXHVL6rPxjgHmO/Sb6U2yOOHd2xLmejzim1J7CjJyW5EgJIjpOgaiKwntKi+IqafDnAIT9ESfG9vrUOoyAyXGLvTbF4yBa22/dxv8PCOCsGIKC6sVTHN98HQ99Ev82FCUBjohRstoUEhJoXSHSXZKZZBEtSC+KvLCQqODTP16sjN/u10ebCBKMfkyi8AY8+bUpoOP79qsoyv23CxJoWb5McL9OTQOd4KAEhZZPRxnrPOPFJj8uYxjUzQOEnOJdlHjKos3HyZWo1OGrX/BuxZNIdS0zcqnVPomthRLFKSrNecAztTSHlWYSSvAAAlqovZHNdoJudpPxbgZShrRTGvDQS2F8wl2JEommLuZgmYlrs88vXTEXbwZ8V+NsN7LbWXiaRzZtptnv3qEEa/iarGBC/Yr9nAjYNArmQIZ+XRIhSRgkB4fkQIvVdo2RpoRKewFAbh1qfdWvzumxYLulTkSYlCL+lfV4KdM29gpkgrXvzx/C0FGltzAl4wbSeQGf4oPsarBCdvz9obvzC5HF8Aw8KQ2hsAKN2s9+qiFxwnbB75se8jgePuZ33PyaRtPGoimRUVlbh37Sd5BIuZUOZQdL5dxMP3v0vpiy4PezhfHs0cAO0w7IS2cVoQQMcW+APlYF/JT4U46GMVusi9qzafu51zXML4Q"
+      }
+    }
+  ]
 }
