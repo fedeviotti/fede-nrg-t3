@@ -9,11 +9,12 @@
   "rangeStrategy": "bump",
   "hostRules": [
     {
-      "matchHost": "https://npm.pkg.github.com",
+      "matchHost": "https://npm.pkg.github.com/",
       "hostType": "npm",
       "encrypted": {
-        "token": "wcFMA/xDdHCJBTolAQ/+ODxeP3JTkb0tJeUb8InIiRDFc84qQv2BxVZlwdcEZja5Q9+wfBDVXoqVUlZCCVI+txEaR4DKDUcFOk2iwi0v7aU9JBNkbBr+Tu530nBwibwfxgUAnyRGaQxmMMPJzQXNTcedRIvBFyXAF5v8hLEGxa2eXdbL5NBSYRwjw8WLyzs93Ej0UCg/vzEbI59/HTxca4xuyceFeGXPdZzg2v81yx8n7fmeyN2T41WWvTB+3is+M0QnAGcJhwBcGbO4q4J+0Bklw7rBfQyVs3KuDnKbm3/wWWapWIsi5pnJRBKrK9SGmZib4lAztSawFB+8dhkeK0mk27XIzLjNS5IY6hi06rOiXcmzhc3yRmnglXfCASOR1ua4rqEvyOl/mYqrLoovlLkUkNw2ebV1ivdam0qMFbyg7NXfmHsdikrc8LqkvXTsLud6gAomOEgxJ1XCBxggcg32/mefgFX3StDgRVyj3CpgMGwSRY173OxnJ5Vm9yV+u3dtWNJYY/E++OlHe6lLgfvAuNdkpd2CKGy2CfAt8rCy5YyPtV8T0YIeNw3YndCko/UvydZCYWSR/uHWd6dnlSugrs4rJOQLyREwK4I7paXkiVoaMeuSmitBN2QIONd5ihWJCsLRkdvEigInml7oo1qkzFlfVfVWXh5LgUHfs9jzxQxSPOSFa0L8Zfna10HSsgGZKLqj2qFyiSaanEpqtxXFhZzz1vA/qNYFrOUml9mbp1eM/WNpjfvwA33DkR/yHyveehK6oomzpZxJqtydDnkp1IrJhYoqIGab1V0eJNFFBQo/3DTl3Tv1CK94eUMXYIzza6viVJnwIAFPIZeZptQFhDDRZYL3jee+s9LiQWDynFBtffdyapjkrQweH4KmSYWEs6cxDpDbITLVdPg1Vh1B4B7mGHfMnlECO+4Mvx90tIM"
+        "token": "wcFMA/xDdHCJBTolAQ/9E3QnF6VSenXp0gSYrtJC7KmbtJmeUDEL/lditHZnorSBCzi5NODenDhrWCriBQQ7HK8S0VOjRTzZl8UR3fSo3rXxPl3gLziHc6d7bbdmo6MBKiU7nJeJLcHFzVwfREJtnL0PCIDCbYmclVX06GJ6MV6s79sXWHXSvsp5nqo87rMDU/PYRiC7bMoe0KSc9JmSUbWuV0iv3doyXoG79VGuRBRNhZfXiqR97FtK6Dmzj45m6MUaM2HYt6OTuuA/WP0RXzqrsMvZks9E7TJhtgUxuMJz8NMZ3tpUNK6NSaxpBlXbUhrYipM8MpfhpzxuS1TmBGN0N+Z1srWhX4P0qr/+ajvjgAAHeSHMO7Np+vr7Hit8EJlc6F2rxLRHtjYHLbXjwnFs8gIjJeNFKWe2sTCZtKy/AGs3xuXA+YVcE2iYWvQwDZOcHrogQZ2XjWs7MzXPMoui0hxGXs6DPbn+PgHAr28IUo6B68BEtQPHVIfnV5i/VHh82tb7GTLz9cyklv59lSuWB4CdM9tVgpnVzROjfdtXiS14Xixd2kXbQ0pLAdYzHcEkSeQfK2WZWnb+/WWuqCnvtxzvkEVl4UjVstwFpTof4dFtPK6H6g64YdRli+E59ReESqNgXdvECbbJE1qfqGUSxsDMjfmMWu8o5IwX/aM7WM6VR87Q6diXbuc/DQvSjAEG5W0d5TWTfveOJln9QGb6sPf8u9LWbdq5emcVqRRdw7/6ps9gZ9fHqlJ6CdsyG4SqC8kajOHxb8ZKCv06dA4wjGhwt5PoTnPxmt/U8i63RSiHt997wUbtsw2guuGW80PkONkKJf43pEEupeQZ0PSo528muiW6w4+fVXjjEL0Tes58Q/1DylxmxaVU"
       }
     }
-  ]
+  ],
+  "npmrc": "@fedeviotti:registry=https://npm.pkg.github.com/"
 }
