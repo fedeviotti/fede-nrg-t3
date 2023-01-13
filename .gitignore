@@ -42,3 +42,6 @@ yarn-error.log*
 
 # JetBrains
 .idea
+
+# Visual Studio Code
+.vscode
