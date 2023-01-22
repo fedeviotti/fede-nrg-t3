@@ -33,11 +33,13 @@ const AuthShowcase = () => {
         {secretMessage && ` - ${secretMessage}`}
       </Text>
       <Stack direction="row" spacing={4}>
+        { sessionData && (
         <Link href="/dashboard">
           <Button colorScheme="tertiary">
             Go to Dashboard
           </Button>
         </Link>
+        )}
         <Button
           colorScheme="whiteAlpha"
           onClick={sessionData
