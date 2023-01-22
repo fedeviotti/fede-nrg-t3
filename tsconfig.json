@@ -21,6 +21,7 @@
       "assets/*": ["./src/assets/*"],
       "components/*": ["./src/components/*"],
       "constants/*": ["./src/constants/*"],
+      "features/*": ["./src/features/*"],
       "hooks/*": ["./src/hooks/*"],
       "layouts/*": ["./src/layouts/*"],
       "pages/*": ["./src/pages/*"],
