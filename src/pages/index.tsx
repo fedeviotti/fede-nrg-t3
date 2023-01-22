@@ -8,6 +8,7 @@ import {
   Box, Button, Center, Heading, Stack, Text,
 } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
+import Link from "next/link";
 
 // const BACKGROUND_IMAGES = [
 //   "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80",
@@ -31,14 +32,21 @@ const AuthShowcase = () => {
         {sessionData && `Logged in as ${sessionData.user?.name || sessionData.user?.email}`}
         {secretMessage && ` - ${secretMessage}`}
       </Text>
-      <Button
-        colorScheme="whiteAlpha"
-        onClick={sessionData
-          ? () => signOut()
-          : () => signIn(undefined, { callbackUrl: redirect || "/dashboard" })}
-      >
-        {sessionData ? "Sign out" : "Sign in"}
-      </Button>
+      <Stack direction="row" spacing={4}>
+        <Link href="/dashboard">
+          <Button colorScheme="tertiary">
+            Go to Dashboard
+          </Button>
+        </Link>
+        <Button
+          colorScheme="whiteAlpha"
+          onClick={sessionData
+            ? () => signOut()
+            : () => signIn(undefined, { callbackUrl: redirect || "/dashboard" })}
+        >
+          {sessionData ? "Sign out" : "Sign in"}
+        </Button>
+      </Stack>
     </>
   );
 };
