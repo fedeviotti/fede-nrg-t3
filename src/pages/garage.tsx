@@ -3,10 +3,10 @@ import {
   Button, Heading, useDisclosure, Stack,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import { VehicleList } from "components/garage/VehicleList";
-import { VehicleFormModal } from "components/garage/VehicleFormModal";
 import { useTranslation } from "react-i18next";
 import { NavbarLayout } from "layouts/NavbarLayout";
+import { VehicleList } from "features/garage/VehicleList";
+import { VehicleFormModal } from "features/garage/VehicleFormModal";
 
 const Garage = () => {
   const { t } = useTranslation("common");

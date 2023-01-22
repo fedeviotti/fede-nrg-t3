@@ -3,8 +3,8 @@ import {
   Flex, Grid, GridItem, Spinner,
 } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
-import { VehicleCard } from "components/garage/VehicleCard";
 import { useIsAuthenticated } from "hooks/useIsAuthenticated";
+import { VehicleCard } from "./VehicleCard";
 
 export const VehicleList = () => {
   const sessionData = useIsAuthenticated();
