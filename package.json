@@ -12,7 +12,14 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint"
+    ]
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.15",
@@ -51,6 +58,8 @@
     "@typescript-eslint/parser": "^5.33.0",
     "eslint": "^8.32.0",
     "eslint-config-next": "13.1.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
     "prisma": "^4.5.0",
     "ts-node": "^10.9.1",
