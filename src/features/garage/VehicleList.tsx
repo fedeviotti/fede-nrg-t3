@@ -8,7 +8,8 @@ import { VehicleCard } from "./VehicleCard";
 
 export const VehicleList = () => {
   const sessionData = useIsAuthenticated();
-  const { data: vehicles, isLoading, isError } = trpc.garage.getVehiclesByOwner.useQuery(
+  const { data: vehicles, isLoading, isError } =
+    trpc.garage.getVehiclesByOwner.useQuery(
     { ownerId: sessionData?.user?.id },
     { enabled: sessionData?.user !== undefined },
   );
