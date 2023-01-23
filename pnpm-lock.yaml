@@ -29,7 +29,7 @@ specifiers:
   next: 13.1.1
   next-auth: ^4.15.1
   nodemailer: ^6.8.0
-  prettier: ^2.7.1
+  prettier: ^2.8.3
   prisma: ^4.5.0
   react: 18.2.0
   react-dom: 18.2.0
@@ -77,7 +77,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.44.0_hsf322ms6xhhd4b5ne6lb74y4a
   eslint: 8.28.0
   eslint-config-next: 13.1.1_hsf322ms6xhhd4b5ne6lb74y4a
-  prettier: 2.7.1
+  prettier: 2.8.3
   prisma: 4.6.1
   ts-node: 10.9.1_76bvzwqatfihmnr5dx42jk5azq
   typescript: 4.9.3
@@ -3879,8 +3879,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  /prettier/2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+  /prettier/2.8.3:
+    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
