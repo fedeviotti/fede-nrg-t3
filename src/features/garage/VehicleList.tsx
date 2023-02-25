@@ -20,7 +20,10 @@ export const VehicleList = () => {
     <Grid templateColumns="repeat(4, 1fr)" gap={12}>
       {vehicles?.map((vehicle) => (
         <GridItem key={vehicle.id}>
-          <VehicleCard key={Number(vehicle.id)} vehicle={vehicle} />
+          <VehicleCard
+            key={Number(vehicle.id)}
+            vehicle={vehicle}
+          />
         </GridItem>
       ))}
     </Grid>
