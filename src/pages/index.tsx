@@ -1,5 +1,4 @@
 import React from "react";
-import { type NextPage } from "next";
 import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 
@@ -9,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
 import Link from "next/link";
+import type { NextPageWithLayout } from "pages/_app";
 
 // const BACKGROUND_IMAGES = [
 //   "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80",
@@ -53,7 +53,7 @@ const AuthShowcase = () => {
   );
 };
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
   return (
@@ -89,6 +89,10 @@ const Home: NextPage = () => {
       </main>
     </>
   );
+};
+
+Home.getLayout = function getLayout(home: React.ReactElement) {
+  return home;
 };
 
 export default Home;
