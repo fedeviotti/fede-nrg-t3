@@ -15,6 +15,7 @@ import type { Vehicle } from "@prisma/client";
 import { useVehicleCardImage } from "features/garage/hooks/useVehicleCardImage";
 import { useVehicleTagColor } from "features/garage/hooks/useVehicleTagColor";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 type Props = {
   vehicle: Vehicle & { type: { name: string | null } };
@@ -57,9 +58,14 @@ export const VehicleCard = ({ vehicle }: Props) => {
       </CardBody>
       <Divider />
       <CardFooter justifyContent="center">
-        <Button variant="ghost" colorScheme="primary">
-          {t("garage.vehicle.card.cta_maintenance")}
-        </Button>
+        <Link href={`/garage/vehicles/${vehicle.id}`}>
+          <Button
+            variant="ghost"
+            colorScheme="primary"
+          >
+            {t("garage.vehicle.card.cta_maintenance")}
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
