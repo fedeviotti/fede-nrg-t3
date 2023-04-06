@@ -8,9 +8,10 @@ import { ChakraProvider } from "@chakra-ui/react";
 import baseTheme from "themes/baseTheme";
 import { Fonts } from "components/styles/Fonts";
 import { trpc } from "utils/trpc";
-import "../../i18n";
+import "i18n";
 
 import "styles/globals.css";
+import { NavbarLayout } from "layouts/NavbarLayout";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -25,7 +26,7 @@ const MyApp = ({
   Component,
   pageProps: { session, ...pageProps },
 }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? ((page) => page);
+  const getLayout = Component.getLayout ?? ((page) => <NavbarLayout>{page}</NavbarLayout>);
 
   return (
     <SessionProvider session={session}>
