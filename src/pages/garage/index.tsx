@@ -4,7 +4,6 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
-import { NavbarLayout } from "layouts/NavbarLayout";
 import { VehicleList } from "features/garage/VehicleList";
 import { VehicleFormModal } from "features/garage/VehicleFormModal";
 
@@ -28,14 +27,6 @@ const Garage = () => {
       </Stack>
       <VehicleFormModal isOpen={isOpen} onClose={onClose} />
     </>
-  );
-};
-
-Garage.getLayout = function getLayout(garage: React.ReactElement) {
-  return (
-    <NavbarLayout>
-      {garage}
-    </NavbarLayout>
   );
 };
 

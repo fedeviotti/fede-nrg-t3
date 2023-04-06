@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Center, Text } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
 import { useIsAuthenticated } from "hooks/useIsAuthenticated";
-import { NavbarLayout } from "layouts/NavbarLayout";
 
 const Dashboard = () => {
   const sessionData = useIsAuthenticated();
@@ -21,14 +20,6 @@ const Dashboard = () => {
         </Text>
       </Center>
     </Box>
-  );
-};
-
-Dashboard.getLayout = function getLayout(memory: React.ReactElement) {
-  return (
-    <NavbarLayout>
-      {memory}
-    </NavbarLayout>
   );
 };
 
