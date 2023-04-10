@@ -34,6 +34,9 @@ export const VehicleCard = ({ vehicle }: Props) => {
           src={imageSrc}
           alt="Bicycle"
           borderRadius="lg"
+          objectFit="cover"
+          maxW={{ base: "100%", md: "400px" }}
+          alignSelf="center"
         />
         <Stack mt="16px" direction="column">
           <Heading size="md">
