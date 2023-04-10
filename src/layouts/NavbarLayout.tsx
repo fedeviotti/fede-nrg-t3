@@ -15,7 +15,7 @@ export const NavbarLayout = ({ children }: Props) => (
     <Flex
       direction="column"
       alignItems="center"
-      py={8}
+      py="32px"
       minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px - ${FOOTER_HEIGHT}px)`}
     >
       <Box width={PAGE_WIDTH}>
