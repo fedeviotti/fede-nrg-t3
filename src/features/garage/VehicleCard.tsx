@@ -16,6 +16,7 @@ import { useVehicleCardImage } from "features/garage/hooks/useVehicleCardImage";
 import { useVehicleTagColor } from "features/garage/hooks/useVehicleTagColor";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 type Props = {
   vehicle: Vehicle & { type: { name: string | null } };
@@ -27,22 +28,20 @@ export const VehicleCard = ({ vehicle }: Props) => {
   const tagColor = useVehicleTagColor(vehicle.type.name);
 
   return (
-    <Card maxW="sm" minH="md">
+    <Card>
       <CardBody display="flex" flexDirection="column">
         <Image
           src={imageSrc}
           alt="Bicycle"
           borderRadius="lg"
         />
-        <Stack mt="6" flexGrow={1} justifyContent="space-between">
-          <Stack>
-            <Heading size="md">
-              {vehicle.name}
-            </Heading>
-            <Text noOfLines={3}>
-              {vehicle.description}
-            </Text>
-          </Stack>
+        <Stack mt="16px" direction="column">
+          <Heading size="md">
+            {vehicle.name}
+          </Heading>
+          <Text noOfLines={2} minH="48px">
+            {vehicle.description}
+          </Text>
           <Tag
             size="md"
             key="md"
@@ -50,7 +49,6 @@ export const VehicleCard = ({ vehicle }: Props) => {
             colorScheme={tagColor}
             textTransform="uppercase"
             alignSelf="flex-end"
-            justifySelf="flex-end"
           >
             {vehicle.type.name}
           </Tag>
@@ -62,8 +60,9 @@ export const VehicleCard = ({ vehicle }: Props) => {
           <Button
             variant="ghost"
             colorScheme="primary"
+            rightIcon={<ArrowForwardIcon />}
           >
-            {t("garage.vehicle.card.cta_maintenance")}
+            {t("garage.vehicle.card.cta_maintenances")}
           </Button>
         </Link>
       </CardFooter>
