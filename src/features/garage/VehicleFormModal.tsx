@@ -108,7 +108,7 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
               <ModalHeader>{t("garage.vehicle.create_form.title")}</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
-                <Flex direction="column" gap={4}>
+                <Flex direction="column" gap="16px">
                   <Field
                     as={Input}
                     name="name"
