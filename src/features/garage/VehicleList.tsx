@@ -19,7 +19,7 @@ export const VehicleList = () => {
   return (
     <SimpleGrid minChildWidth="300px" spacing="32px">
       {vehicles?.map((vehicle) => (
-        <GridItem key={vehicle.id} maxH="md">
+        <GridItem key={vehicle.id}>
           <VehicleCard
             key={Number(vehicle.id)}
             vehicle={vehicle}
