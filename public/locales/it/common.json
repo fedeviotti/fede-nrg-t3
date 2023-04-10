@@ -1,6 +1,8 @@
 {
+  "back": "Indietro",
   "garage": {
     "title": "Gestione Garage",
+    "description": "I tuoi veicoli",
     "cta_add": "Aggiungi veicolo",
     "vehicle": {
       "create_form": {
@@ -21,7 +23,10 @@
         }
       },
       "card": {
-        "cta_maintenance": "Manutenzione"
+        "cta_maintenances": "Manutenzioni",
+        "maintenance": {
+          "cta_add": "Aggiungi manutenzione"
+        }
       }
     }
   },
