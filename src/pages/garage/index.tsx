@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Button, Heading, useDisclosure, Stack,
+  Button, Heading, useDisclosure, Stack, Text,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
@@ -18,9 +18,12 @@ const Garage = () => {
         <meta name="description" content={t("garage.title") || "Garage"} />
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
-      <Stack gap={8}>
+      <Stack gap="32px">
         <Stack direction="row" justifyContent="space-between">
-          <Heading as="h2" size="xl" fontWeight="semibold">{t("garage.title")}</Heading>
+          <Stack direction="column">
+            <Heading as="h2" size="xl" fontWeight="semibold">{t("garage.title")}</Heading>
+            <Text size="md">{t("garage.description")}</Text>
+          </Stack>
           <Button variant="ghost" onClick={onOpen}>{t("garage.cta_add")}</Button>
         </Stack>
         <VehicleList />
