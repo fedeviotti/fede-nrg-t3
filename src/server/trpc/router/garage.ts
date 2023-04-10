@@ -16,6 +16,13 @@ export const garageRouter = router({
         },
       },
     })),
+  getVehicleById: protectedProcedure
+    .input(z.object({ id: z.number() }))
+    .query(({ ctx, input }) => ctx.prisma.vehicle.findUnique({
+      where: {
+        id: input.id,
+      },
+    })),
   insertVehicle: protectedProcedure
     .input(z.object({
       name: z.string(),
