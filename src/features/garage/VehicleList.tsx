@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Flex, Grid, GridItem, Spinner,
+  Flex, GridItem, SimpleGrid, Spinner,
 } from "@chakra-ui/react";
 import { trpc } from "utils/trpc";
 import { useIsAuthenticated } from "hooks/useIsAuthenticated";
@@ -17,15 +17,15 @@ export const VehicleList = () => {
   if (isLoading) return <Flex justifyContent="center"><Spinner size="lg" /></Flex>;
 
   return (
-    <Grid templateColumns="repeat(4, 1fr)" gap={12}>
+    <SimpleGrid minChildWidth="300px" spacing="32px">
       {vehicles?.map((vehicle) => (
-        <GridItem key={vehicle.id}>
+        <GridItem key={vehicle.id} maxH="md">
           <VehicleCard
             key={Number(vehicle.id)}
             vehicle={vehicle}
           />
         </GridItem>
       ))}
-    </Grid>
+    </SimpleGrid>
   );
 };
