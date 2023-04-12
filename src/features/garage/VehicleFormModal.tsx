@@ -130,10 +130,11 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
                 </Flex>
               </ModalBody>
               <ModalFooter>
-                <Button mr={3} onClick={onClose}>
+                <Button mr={3} onClick={onClose} colorScheme="primary" variant="ghost">
                   {t("garage.vehicle.create_form.button.cancel")}
                 </Button>
                 <Button
+                  colorScheme="primary"
                   type="submit"
                   form="create-vehicle"
                   isLoading={isSubmitting}
