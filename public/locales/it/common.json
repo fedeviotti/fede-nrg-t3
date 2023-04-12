@@ -23,9 +23,9 @@
         }
       },
       "card": {
-        "cta_maintenances": "Manutenzioni",
-        "maintenance": {
-          "cta_add": "Aggiungi manutenzione"
+        "cta_services": "Interventi",
+        "service": {
+          "cta_add": "Aggiungi intervento"
         }
       }
     }

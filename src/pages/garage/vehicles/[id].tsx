@@ -49,7 +49,7 @@ const VehicleMaintenance = () => {
             leftIcon={<AddIcon />}
             onClick={onOpen}
           >
-            {t("garage.vehicle.card.maintenance.cta_add")}
+            {t("garage.vehicle.card.service.cta_add")}
           </Button>
         </Stack>
         <Stack direction="column" spacing="16px">
@@ -60,7 +60,7 @@ const VehicleMaintenance = () => {
             {vehicle?.description}
           </Text>
           {/* Add Image  */}
-          {/* Add list maintenance as table */}
+          {/* Add list services as table */}
         </Stack>
       </Stack>
       <ServiceDrawer isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
