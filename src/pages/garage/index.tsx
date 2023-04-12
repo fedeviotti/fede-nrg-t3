@@ -24,7 +24,7 @@ const Garage = () => {
             <Heading as="h2" size="xl" fontWeight="semibold">{t("garage.title")}</Heading>
             <Text size="md">{t("garage.description")}</Text>
           </Stack>
-          <Button variant="ghost" onClick={onOpen}>{t("garage.cta_add")}</Button>
+          <Button colorScheme="primary" onClick={onOpen}>{t("garage.cta_add")}</Button>
         </Stack>
         <VehicleList />
       </Stack>
