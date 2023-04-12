@@ -35,7 +35,7 @@ export const VehicleCard = ({ vehicle }: Props) => {
           alt="Bicycle"
           borderRadius="lg"
           objectFit="cover"
-          maxW={{ base: "100%", md: "400px" }}
+          maxW={{ base: "100%", md: "300px" }}
           alignSelf="center"
         />
         <Stack mt="16px" direction="column">
@@ -61,7 +61,6 @@ export const VehicleCard = ({ vehicle }: Props) => {
       <CardFooter justifyContent="center">
         <Link href={`/garage/vehicles/${vehicle.id}`}>
           <Button
-            variant="ghost"
             colorScheme="primary"
             rightIcon={<ArrowForwardIcon />}
           >
