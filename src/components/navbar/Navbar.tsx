@@ -48,6 +48,7 @@ const Navbar = () => {
         <HStack spacing={8}>
           <NextLink href="/dashboard">
             <Button
+              colorScheme="primary"
               fontWeight="normal"
               variant="ghost"
             >
@@ -56,6 +57,7 @@ const Navbar = () => {
           </NextLink>
           <NextLink href="/garage">
             <Button
+              colorScheme="primary"
               fontWeight="normal"
               variant="ghost"
             >
@@ -64,6 +66,7 @@ const Navbar = () => {
           </NextLink>
           <NextLink href="/crypto">
             <Button
+              colorScheme="primary"
               fontWeight="normal"
               variant="ghost"
             >
@@ -72,6 +75,7 @@ const Navbar = () => {
           </NextLink>
           <NextLink href="/memory">
             <Button
+              colorScheme="primary"
               fontWeight="normal"
               variant="ghost"
             >
