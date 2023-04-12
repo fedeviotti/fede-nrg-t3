@@ -63,7 +63,7 @@ const config: ThemeConfig = {
 
 const baseTheme = extendTheme({
   colors,
-  // components,
+  components,
   fonts,
   config,
 });
