@@ -68,6 +68,7 @@ const Home: NextPageWithLayout = () => {
           backgroundImage="url('https://images.unsplash.com/photo-1610296669228-602fa827fc1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1675&q=80')"
           backgroundPosition="cover"
           backgroundRepeat="no-repeat"
+          backgroundSize="cover"
         >
           <Center height="100vh">
             <Stack alignItems="center" spacing={8}>
