@@ -33,7 +33,7 @@
         "createForm": {
           "name": "Name",
           "description": "Description",
-          "price": "Price",
+          "price": "Price"
 
         }
       }
