@@ -31,13 +31,22 @@
       "serviceDrawer" :{
         "title": "Add service",
         "createForm": {
-          "name": "Name",
-          "description": "Description",
-          "price": "Price"
-
+          "name": {
+            "placeholder": "Name",
+            "required": "Name mandatory",
+            "minLength": "Name should be at least 3 characters long"
+          },
+          "description": {
+            "placeholder": "Description",
+          },
+          "price": {
+            "placeholder": "Price",
+            "required": "Price mandatory",
+            "minValue": "Price should be at least 0.01"
+          }
         }
       }
     }
   },
-  "footer": "Made with ❤️ and ☕️ by FEDENRG"
+  "footer": "Made with ❤️ and ☕️ by FedeNrg"
 }

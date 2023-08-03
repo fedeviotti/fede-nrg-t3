@@ -31,13 +31,22 @@
       "serviceDrawer" :{
         "title": "Aggiungi intervento",
         "createForm": {
-          "name": "Nome",
-          "description": "Descrizione",
-          "price": "Prezzo"
-
+          "name": {
+            "placeholder": "Nome",
+            "required": "Nome obbligatorio",
+            "minLength": "Nome deve essere di almeno 3 caratteri"
+          },
+          "description": {
+            "placeholder": "Descrizione"
+          },
+          "price": {
+            "placeholder": "Prezzo",
+            "required": "Prezzo obbligatorio",
+            "minValue": "Prezzo deve essere maggiore di 0"
+          }
         }
       }
     }
   },
-  "footer": "Fatto con ❤️ and ☕️ data FEDENRG"
+  "footer": "Fatto con ❤️ and ☕️ da FedeNrg"
 }
