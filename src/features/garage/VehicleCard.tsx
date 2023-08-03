@@ -64,7 +64,7 @@ export const VehicleCard = ({ vehicle }: Props) => {
             colorScheme="primary"
             rightIcon={<ArrowForwardIcon />}
           >
-            {t("garage.vehicle.card.cta_services")}
+            {t("garage.vehicle.card.ctaServices")}
           </Button>
         </Link>
       </CardFooter>

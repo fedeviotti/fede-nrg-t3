@@ -23,7 +23,7 @@
         }
       },
       "card": {
-        "cta_services": "Interventi",
+        "ctaServices": "Interventi",
         "service": {
           "ctaAdd": "Aggiungi intervento"
         }

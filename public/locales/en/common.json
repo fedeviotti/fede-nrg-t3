@@ -23,7 +23,7 @@
         }
       },
       "card": {
-        "cta_services": "Services",
+        "ctaServices": "Services",
         "service": {
           "ctaAdd": "Add service"
         }
