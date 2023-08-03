@@ -25,12 +25,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String?  @db.Text
-  access_token      String?  @db.Text
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String?  @db.Text
+  id_token          String? @db.Text
   session_state     String?
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -65,32 +65,33 @@ model VerificationToken {
 }
 
 model Vehicle {
-  id          Int          @id @default(autoincrement())
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
-  name        String       @db.VarChar(255)
+  id          Int         @id @default(autoincrement())
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  name        String      @db.VarChar(255)
   description String?
-  isOwned     Boolean      @default(true)
+  isOwned     Boolean     @default(true)
   typeId      Int
   ownerId     String?
-  owner       User?        @relation(fields: [ownerId], references: [id])
-  type        VehicleType  @relation(fields: [typeId], references: [id])
+  owner       User?       @relation(fields: [ownerId], references: [id])
+  type        VehicleType @relation(fields: [typeId], references: [id])
   services    Service[]
 }
 
 model VehicleType {
-  id          Int        @id @default(autoincrement())
-  createdAt   DateTime?  @default(now())
-  name        String?    @db.VarChar
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime? @default(now())
+  name        String?   @db.VarChar
   description String?
   vehicles    Vehicle[]
 }
 
 model Service {
-  id          Int       @id @default(autoincrement())
-  createdAt   DateTime  @default(now())
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
   name        String?
   description String?
   vehicleId   Int?
   vehicle     Vehicle? @relation(fields: [vehicleId], references: [id])
+  price       Float?
 }
