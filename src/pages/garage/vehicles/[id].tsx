@@ -49,7 +49,7 @@ const VehicleMaintenance = () => {
             leftIcon={<AddIcon />}
             onClick={onOpen}
           >
-            {t("garage.vehicle.card.service.cta_add")}
+            {t("garage.vehicle.card.service.ctaAdd")}
           </Button>
         </Stack>
         <Stack direction="column" spacing="16px">

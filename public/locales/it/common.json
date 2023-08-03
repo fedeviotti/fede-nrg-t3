@@ -3,7 +3,7 @@
   "garage": {
     "title": "Gestione Garage",
     "description": "I tuoi veicoli",
-    "cta_add": "Aggiungi veicolo",
+    "ctaAdd": "Aggiungi veicolo",
     "vehicle": {
       "create_form": {
         "title": "Aggiungi veicolo",
@@ -14,7 +14,7 @@
         },
         "button": {
           "cancel": "Annulla",
-          "cta_add": "Aggiungi"
+          "ctaAdd": "Aggiungi"
         },
         "toast": {
           "title": "Aggiungi veicolo",
@@ -25,11 +25,17 @@
       "card": {
         "cta_services": "Interventi",
         "service": {
-          "cta_add": "Aggiungi intervento"
+          "ctaAdd": "Aggiungi intervento"
         }
       },
       "service_drawer" :{
-        "title": "Aggiungi intervento"
+        "title": "Aggiungi intervento",
+        "create_form": {
+          "name": "Nome",
+            "description": "Descrizione",
+          "price": "Prezzo"
+
+        }
       }
     }
   },

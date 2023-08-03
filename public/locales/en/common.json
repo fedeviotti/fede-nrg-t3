@@ -3,7 +3,7 @@
   "garage": {
     "title": "Garage Manager",
     "description": "Yours vehicles",
-    "cta_add": "Add vehicle",
+    "ctaAdd": "Add vehicle",
     "vehicle": {
       "create_form": {
         "title": "Add vehicle",
@@ -14,7 +14,7 @@
         },
         "button": {
           "cancel": "Cancel",
-          "cta_add": "Add"
+          "ctaAdd": "Add"
         },
         "toast": {
           "title": "Add vehicle",
@@ -25,7 +25,7 @@
       "card": {
         "cta_services": "Services",
         "service": {
-          "cta_add": "Add service"
+          "ctaAdd": "Add service"
         }
       },
       "service_drawer" :{
