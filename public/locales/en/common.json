@@ -29,7 +29,13 @@
         }
       },
       "serviceDrawer" :{
-        "title": "Add service"
+        "title": "Add service",
+        "createForm": {
+          "name": "Name",
+          "description": "Description",
+          "price": "Price",
+
+        }
       }
     }
   },

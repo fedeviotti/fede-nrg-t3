@@ -32,7 +32,7 @@
         "title": "Aggiungi intervento",
         "createForm": {
           "name": "Nome",
-            "description": "Descrizione",
+          "description": "Descrizione",
           "price": "Prezzo"
 
         }
