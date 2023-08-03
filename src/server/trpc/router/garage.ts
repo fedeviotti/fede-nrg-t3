@@ -4,7 +4,10 @@ import { router, protectedProcedure } from "../trpc";
 export const garageRouter = router({
   getVehiclesByOwner: protectedProcedure
     .input(z.object({ ownerId: z.string().nullish() }))
-    .query(({ ctx, input }) => ctx.prisma.vehicle.findMany({
+    .query(({
+      ctx,
+      input,
+    }) => ctx.prisma.vehicle.findMany({
       where: {
         ownerId: input.ownerId,
       },
@@ -18,7 +21,10 @@ export const garageRouter = router({
     })),
   getVehicleById: protectedProcedure
     .input(z.object({ id: z.number() }))
-    .query(({ ctx, input }) => ctx.prisma.vehicle.findUnique({
+    .query(({
+      ctx,
+      input,
+    }) => ctx.prisma.vehicle.findUnique({
       where: {
         id: input.id,
       },
@@ -30,5 +36,8 @@ export const garageRouter = router({
       typeId: z.number(),
       ownerId: z.string(),
     }))
-    .mutation(({ ctx, input }) => ctx.prisma.vehicle.create({ data: input })),
+    .mutation(({
+      ctx,
+      input,
+    }) => ctx.prisma.vehicle.create({ data: input })),
 });
