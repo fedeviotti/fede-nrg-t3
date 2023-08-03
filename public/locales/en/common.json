@@ -5,7 +5,7 @@
     "description": "Yours vehicles",
     "ctaAdd": "Add vehicle",
     "vehicle": {
-      "create_form": {
+      "createForm": {
         "title": "Add vehicle",
         "field": {
           "name": "Name",
@@ -28,7 +28,7 @@
           "ctaAdd": "Add service"
         }
       },
-      "service_drawer" :{
+      "serviceDrawer" :{
         "title": "Add service"
       }
     }

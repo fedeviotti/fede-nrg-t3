@@ -5,7 +5,7 @@
     "description": "I tuoi veicoli",
     "ctaAdd": "Aggiungi veicolo",
     "vehicle": {
-      "create_form": {
+      "createForm": {
         "title": "Aggiungi veicolo",
         "field": {
           "name": "Nome",
@@ -28,9 +28,9 @@
           "ctaAdd": "Aggiungi intervento"
         }
       },
-      "service_drawer" :{
+      "serviceDrawer" :{
         "title": "Aggiungi intervento",
-        "create_form": {
+        "createForm": {
           "name": "Nome",
             "description": "Descrizione",
           "price": "Prezzo"

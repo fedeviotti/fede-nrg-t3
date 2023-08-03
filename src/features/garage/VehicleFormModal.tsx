@@ -61,8 +61,8 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
     utils.garage.getVehiclesByOwner.invalidate({ ownerId: sessionData?.user?.id });
     toast({
       ...defaultToastOptions,
-      title: t("garage.vehicle.create_form.toast.title"),
-      description: t("garage.vehicle.create_form.toast.success"),
+      title: t("garage.vehicle.createForm.toast.title"),
+      description: t("garage.vehicle.createForm.toast.success"),
       status: "success",
     });
     onClose();
@@ -71,8 +71,8 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
   const onErrorHandler = React.useCallback(() => {
     toast({
       ...defaultToastOptions,
-      title: t("garage.vehicle.create_form.toast.title"),
-      description: t("garage.vehicle.create_form.toast.error"),
+      title: t("garage.vehicle.createForm.toast.title"),
+      description: t("garage.vehicle.createForm.toast.error"),
       status: "error",
     });
   }, [t, toast]);
@@ -105,24 +105,24 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
         {({ isSubmitting, isValid, dirty }) => (
           <Form id="create-vehicle">
             <ModalContent>
-              <ModalHeader>{t("garage.vehicle.create_form.title")}</ModalHeader>
+              <ModalHeader>{t("garage.vehicle.createForm.title")}</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
                 <Flex direction="column" gap="16px">
                   <Field
                     as={Input}
                     name="name"
-                    placeholder={t("garage.vehicle.create_form.field.name")}
+                    placeholder={t("garage.vehicle.createForm.field.name")}
                   />
                   <Field
                     as={Input}
                     name="description"
-                    placeholder={t("garage.vehicle.create_form.field.description")}
+                    placeholder={t("garage.vehicle.createForm.field.description")}
                   />
                   <Field
                     as={Select}
                     name="typeId"
-                    placeholder={t("garage.vehicle.create_form.field.type")}
+                    placeholder={t("garage.vehicle.createForm.field.type")}
                   >
                     <option value={1}>Bike</option>
                     <option value={2}>Car</option>
@@ -131,7 +131,7 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
               </ModalBody>
               <ModalFooter>
                 <Button mr={3} onClick={onClose} colorScheme="primary" variant="ghost">
-                  {t("garage.vehicle.create_form.button.cancel")}
+                  {t("garage.vehicle.createForm.button.cancel")}
                 </Button>
                 <Button
                   colorScheme="primary"
@@ -140,7 +140,7 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
                   isLoading={isSubmitting}
                   isDisabled={!isValid || !dirty}
                 >
-                  {t("garage.vehicle.create_form.button.ctaAdd")}
+                  {t("garage.vehicle.createForm.button.ctaAdd")}
                 </Button>
               </ModalFooter>
             </ModalContent>
