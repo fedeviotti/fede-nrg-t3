@@ -31,7 +31,7 @@
       "service" :{
         "drawer": {
           "title": "Add service",
-          "form": {
+          "createForm": {
             "name": {
               "label": "Name",
               "required": "Name mandatory",
