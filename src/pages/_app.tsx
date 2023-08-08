@@ -9,7 +9,7 @@ import { Fonts } from "~/components/styles/Fonts";
 import { trpc } from "~/utils/trpc";
 import "i18n";
 
-import "styles/globals.css";
+import "~/styles/globals.css";
 import baseTheme from "~/themes/baseTheme";
 import { NavbarLayout } from "~/layouts/NavbarLayout";
 
