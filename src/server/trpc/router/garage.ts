@@ -38,6 +38,9 @@ export const garageRouter = router({
       where: {
         vehicleId: input.id,
       },
+      orderBy: {
+        createdAt: "desc",
+      },
     })),
   insertVehicle: protectedProcedure
     .input(z.object({
