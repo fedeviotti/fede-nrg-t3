@@ -32,17 +32,19 @@
         "title": "Add service",
         "createForm": {
           "name": {
-            "placeholder": "Name",
+            "label": "Name",
             "required": "Name mandatory",
-            "minLength": "Name should be at least 3 characters long"
+            "minLength": "Name should be at least 3 characters long",
+            "helper": "The name of the service is mandatory"
           },
           "description": {
-            "placeholder": "Description",
+            "label": "Description"
           },
           "price": {
-            "placeholder": "Price",
+            "label": "Price €",
             "required": "Price mandatory",
-            "minValue": "Price should be at least 0.01"
+            "minValue": "Price should be at least 0.01",
+            "helper": "Price in € payed for the service"
           }
         }
       }

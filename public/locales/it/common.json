@@ -32,17 +32,19 @@
         "title": "Aggiungi intervento",
         "createForm": {
           "name": {
-            "placeholder": "Nome",
+            "label": "Nome",
             "required": "Nome obbligatorio",
-            "minLength": "Nome deve essere di almeno 3 caratteri"
+            "minLength": "Nome deve essere di almeno 3 caratteri",
+            "helper": "Il nome dell'intervento è obbligatorio"
           },
           "description": {
-            "placeholder": "Descrizione"
+            "label": "Descrizione"
           },
           "price": {
-            "placeholder": "Prezzo",
+            "label": "Prezzo €",
             "required": "Prezzo obbligatorio",
-            "minValue": "Prezzo deve essere maggiore di 0"
+            "minValue": "Il prezzo deve essere almeno di 0.01",
+            "helper": "Prezzo in € pagato per il servizio"
           }
         }
       }
