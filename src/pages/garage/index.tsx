@@ -4,8 +4,8 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
-import { VehicleList } from "features/garage/VehicleList";
-import { VehicleFormModal } from "features/garage/VehicleFormModal";
+import { VehicleList } from "~/features/garage/VehicleList";
+import { VehicleFormModal } from "~/features/garage/VehicleFormModal";
 
 const Garage = () => {
   const { t } = useTranslation("common");

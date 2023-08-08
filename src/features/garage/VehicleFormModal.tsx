@@ -16,9 +16,9 @@ import * as yup from "yup";
 import {
   Field, Form, Formik,
 } from "formik";
-import { defaultToastOptions } from "constants/defaultToastOptions";
-import { useIsAuthenticated } from "hooks/useIsAuthenticated";
-import { trpc } from "utils/trpc";
+import { defaultToastOptions } from "~/constants/defaultToastOptions";
+import { useIsAuthenticated } from "~/hooks/useIsAuthenticated";
+import { trpc } from "~/utils/trpc";
 
 type VehicleFormValues = {
   name: string;

@@ -6,9 +6,9 @@ import { useRouter } from "next/router";
 import {
   Box, Button, Center, Heading, Stack, Text,
 } from "@chakra-ui/react";
-import { trpc } from "utils/trpc";
+import { trpc } from "~/utils/trpc";
 import Link from "next/link";
-import type { NextPageWithLayout } from "pages/_app";
+import type { NextPageWithLayout } from "~/pages/_app";
 
 // const BACKGROUND_IMAGES = [
 //   "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80",

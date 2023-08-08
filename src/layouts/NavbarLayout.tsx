@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Flex } from "@chakra-ui/react";
-import Navbar from "components/navbar/Navbar";
-import { Footer } from "components/Footer";
-import { FOOTER_HEIGHT, NAVBAR_HEIGHT } from "layouts/constants";
-import { PAGE_WIDTH } from "constants/layout";
+import Navbar from "~/components/navbar/Navbar";
+import { Footer } from "~/components/Footer";
+import { FOOTER_HEIGHT, NAVBAR_HEIGHT } from "~/layouts/constants";
+import { PAGE_WIDTH } from "~/constants/layout";
 
 type Props = {
   children: React.ReactNode;

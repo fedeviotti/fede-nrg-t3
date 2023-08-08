@@ -12,8 +12,8 @@ import {
   Button,
 } from "@chakra-ui/react";
 import type { Vehicle } from "@prisma/client";
-import { useVehicleCardImage } from "features/garage/hooks/useVehicleCardImage";
-import { useVehicleTagColor } from "features/garage/hooks/useVehicleTagColor";
+import { useVehicleCardImage } from "~/features/garage/hooks/useVehicleCardImage";
+import { useVehicleTagColor } from "~/features/garage/hooks/useVehicleTagColor";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
