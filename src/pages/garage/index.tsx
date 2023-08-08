@@ -4,8 +4,8 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
-import { VehicleList } from "features/garage/VehicleList";
-import { VehicleFormModal } from "features/garage/VehicleFormModal";
+import { VehicleList } from "~/features/garage/VehicleList";
+import { VehicleFormModal } from "~/features/garage/VehicleFormModal";
 
 const Garage = () => {
   const { t } = useTranslation("common");
@@ -24,7 +24,7 @@ const Garage = () => {
             <Heading as="h2" size="xl" fontWeight="semibold">{t("garage.title")}</Heading>
             <Text size="md">{t("garage.description")}</Text>
           </Stack>
-          <Button colorScheme="primary" onClick={onOpen}>{t("garage.cta_add")}</Button>
+          <Button colorScheme="primary" onClick={onOpen}>{t("garage.ctaAdd")}</Button>
         </Stack>
         <VehicleList />
       </Stack>

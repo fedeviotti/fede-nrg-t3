@@ -2,8 +2,8 @@ import React from "react";
 import {
   Flex, GridItem, SimpleGrid, Spinner,
 } from "@chakra-ui/react";
-import { trpc } from "utils/trpc";
-import { useIsAuthenticated } from "hooks/useIsAuthenticated";
+import { trpc } from "~/utils/trpc";
+import { useIsAuthenticated } from "~/hooks/useIsAuthenticated";
 import { VehicleCard } from "./VehicleCard";
 
 export const VehicleList = () => {

@@ -3,9 +3,9 @@
   "garage": {
     "title": "Gestione Garage",
     "description": "I tuoi veicoli",
-    "cta_add": "Aggiungi veicolo",
+    "ctaAdd": "Aggiungi veicolo",
     "vehicle": {
-      "create_form": {
+      "createForm": {
         "title": "Aggiungi veicolo",
         "field": {
           "name": "Nome",
@@ -14,7 +14,7 @@
         },
         "button": {
           "cancel": "Annulla",
-          "cta_add": "Aggiungi"
+          "ctaAdd": "Aggiungi"
         },
         "toast": {
           "title": "Aggiungi veicolo",
@@ -23,15 +23,32 @@
         }
       },
       "card": {
-        "cta_services": "Interventi",
+        "ctaServices": "Interventi",
         "service": {
-          "cta_add": "Aggiungi intervento"
+          "ctaAdd": "Aggiungi intervento"
         }
       },
-      "service_drawer" :{
-        "title": "Aggiungi intervento"
+      "serviceDrawer" :{
+        "title": "Aggiungi intervento",
+        "createForm": {
+          "name": {
+            "label": "Nome",
+            "required": "Nome obbligatorio",
+            "minLength": "Nome deve essere di almeno 3 caratteri",
+            "helper": "Il nome dell'intervento è obbligatorio"
+          },
+          "description": {
+            "label": "Descrizione"
+          },
+          "price": {
+            "label": "Prezzo €",
+            "required": "Prezzo obbligatorio",
+            "minValue": "Il prezzo deve essere almeno di 0.01",
+            "helper": "Prezzo in € pagato per il servizio"
+          }
+        }
       }
     }
   },
-  "footer": "Fatto con ❤️ and ☕️ data FEDENRG"
+  "footer": "Fatto con ❤️ and ☕️ da FedeNrg"
 }

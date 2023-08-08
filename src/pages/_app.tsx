@@ -5,13 +5,13 @@ import type { NextPage } from "next";
 import { SessionProvider } from "next-auth/react";
 import { ChakraProvider } from "@chakra-ui/react";
 
-import baseTheme from "themes/baseTheme";
-import { Fonts } from "components/styles/Fonts";
-import { trpc } from "utils/trpc";
+import { Fonts } from "~/components/styles/Fonts";
+import { trpc } from "~/utils/trpc";
 import "i18n";
 
-import "styles/globals.css";
-import { NavbarLayout } from "layouts/NavbarLayout";
+import "~/styles/globals.css";
+import baseTheme from "~/themes/baseTheme";
+import { NavbarLayout } from "~/layouts/NavbarLayout";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

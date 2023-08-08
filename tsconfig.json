@@ -18,17 +18,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "assets/*": ["./src/assets/*"],
-      "components/*": ["./src/components/*"],
-      "constants/*": ["./src/constants/*"],
-      "features/*": ["./src/features/*"],
-      "hooks/*": ["./src/hooks/*"],
-      "layouts/*": ["./src/layouts/*"],
-      "pages/*": ["./src/pages/*"],
-      "styles/*": ["./src/styles/*"],
-      "themes/*": ["./src/themes/*"],
-      "types/*": ["./src/types/*"],
-      "utils/*": ["./src/utils/*"],
+      "~/*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],

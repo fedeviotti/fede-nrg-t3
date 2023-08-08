@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Heading } from "@chakra-ui/react";
 import Head from "next/head";
-import type { NextPageWithLayout } from "pages/_app";
-import { MemoryLayout } from "layouts/MemoryLayout";
+import type { NextPageWithLayout } from "~/pages/_app";
+import { MemoryLayout } from "~/layouts/MemoryLayout";
 
 const Memory: NextPageWithLayout = () => (
   <>
