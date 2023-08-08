@@ -70,7 +70,7 @@ export const ServiceDrawer = ({
       price: Number(values.price),
       vehicleId,
     });
-  }, []);
+  }, [insertService, vehicleId]);
 
   return (
     <Drawer
