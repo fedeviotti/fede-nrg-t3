@@ -1,35 +1,54 @@
 import React from "react";
 import {
-  Box,
   Button, Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
   DrawerFooter,
   DrawerHeader,
-  DrawerOverlay, Flex, Input,
+  DrawerOverlay,
+  Flex,
+  FormControl,
+  FormErrorMessage,
+  FormHelperText,
+  FormLabel,
+  Input,
+  NumberInput,
+  NumberInputField,
   Stack,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import {
-  ErrorMessage, Field, Form, Formik,
+  Field, Form, Formik,
 } from "formik";
 import * as yup from "yup";
+import { trpc } from "~/utils/trpc";
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
   btnRef: React.RefObject<HTMLButtonElement>;
+  vehicleId: number;
 };
 
-const INITIAL_VALUES = {
+type ServiceFormValues = {
+  name: string;
+  description: string;
+  price: string;
+};
+
+const INITIAL_VALUES: ServiceFormValues = {
   name: "",
   description: "",
-  price: 0,
+  price: "0",
 };
 
-export const ServiceDrawer = ({ isOpen, onClose, btnRef }: Props) => {
+export const ServiceDrawer = ({
+  isOpen, onClose, btnRef, vehicleId,
+}: Props) => {
   const { t } = useTranslation("common");
+  const insertService = trpc.garage.insertService.useMutation();
+
   const validationSchema = React.useMemo(
     () => yup.object().shape({
       name: yup
@@ -40,59 +59,64 @@ export const ServiceDrawer = ({ isOpen, onClose, btnRef }: Props) => {
         .string(),
       price: yup.number()
         .required(t("garage.vehicle.serviceDrawer.createForm.price.required") || "Error")
-        .min(0, t("garage.vehicle.serviceDrawer.createForm.price.minValue") || "Error"),
+        .min(0.01, t("garage.vehicle.serviceDrawer.createForm.price.minValue") || "Error"),
     }),
     [t],
   );
 
+  const onSubmitHandler = React.useCallback((values: ServiceFormValues) => {
+    insertService.mutate({
+      ...values,
+      price: Number(values.price),
+      vehicleId,
+    });
+  }, []);
+
   return (
     <Drawer
+      size="sm"
       isOpen={isOpen}
       placement="right"
       onClose={onClose}
       finalFocusRef={btnRef}
     >
       <DrawerOverlay />
-      <DrawerContent>
-        <Formik
-          initialValues={INITIAL_VALUES}
-          onSubmit={() => {}}
-          validationSchema={validationSchema}
-          validateOnMount
-        >
-          {(isValid) => (
-            <Form>
+      <Formik
+        initialValues={INITIAL_VALUES}
+        onSubmit={onSubmitHandler}
+        validationSchema={validationSchema}
+        validateOnMount
+      >
+        {({ isValid, errors, touched }) => (
+          <Form>
+            <DrawerContent>
               <DrawerCloseButton />
               <DrawerHeader>{t("garage.vehicle.serviceDrawer.title")}</DrawerHeader>
               <DrawerBody>
                 <Flex direction="column" gap={4}>
-                  <Box width={["xs", "md"]} height="64px">
-                    <Field
-                      as={Input}
-                      type="text"
-                      name="name"
-                      placeholder={t("garage.vehicle.serviceDrawer.createForm.name.placeholder")}
-                    />
-                    <ErrorMessage component="div" name="name" />
-                  </Box>
-                  <Box width={["xs", "md"]} height="64px">
-                    <Field
-                      as={Input}
-                      type="text"
-                      name="description"
-                      placeholder={t("garage.vehicle.serviceDrawer.createForm.description.placeholder")}
-                    />
-                    <ErrorMessage component="div" name="description" />
-                  </Box>
-                  <Box width={["xs", "md"]} height="64px">
-                    <Field
-                      as={Input}
-                      type="text"
-                      name="price"
-                      placeholder={t("garage.vehicle.serviceDrawer.createForm.price.placeholder")}
-                    />
-                    <ErrorMessage component="div" name="price" />
-                  </Box>
+                  <FormControl isInvalid={!!touched.name && !!errors.name} isRequired>
+                    <FormLabel>{t("garage.vehicle.serviceDrawer.createForm.name.label")}</FormLabel>
+                    <Field as={Input} type="text" name="name" />
+                    {!!touched.name && !!errors.name
+                      ? <FormErrorMessage>{errors.name}</FormErrorMessage>
+                      : <FormHelperText>{t("garage.vehicle.serviceDrawer.createForm.name.helper")}</FormHelperText>}
+                  </FormControl>
+                  <FormControl isInvalid={!!touched.description && !!errors.description}>
+                    <FormLabel>{t("garage.vehicle.serviceDrawer.createForm.description.label")}</FormLabel>
+                    <Field as={Input} type="text" name="description" />
+                    {!!touched.description && !!errors.description
+                      ? <FormErrorMessage>{errors.description}</FormErrorMessage>
+                      : null}
+                  </FormControl>
+                  <FormControl isInvalid={!!touched.price && !!errors.price} isRequired>
+                    <FormLabel>{t("garage.vehicle.serviceDrawer.createForm.price.label")}</FormLabel>
+                    <NumberInput>
+                      <Field as={NumberInputField} name="price" />
+                    </NumberInput>
+                    {!!touched.price && !!errors.price
+                      ? <FormErrorMessage>{errors.price}</FormErrorMessage>
+                      : <FormHelperText>{t("garage.vehicle.serviceDrawer.createForm.price.helper")}</FormHelperText>}
+                  </FormControl>
                 </Flex>
               </DrawerBody>
 
@@ -110,10 +134,10 @@ export const ServiceDrawer = ({ isOpen, onClose, btnRef }: Props) => {
                   </Button>
                 </Stack>
               </DrawerFooter>
-            </Form>
-          )}
-        </Formik>
-      </DrawerContent>
+            </DrawerContent>
+          </Form>
+        )}
+      </Formik>
     </Drawer>
   );
 };
