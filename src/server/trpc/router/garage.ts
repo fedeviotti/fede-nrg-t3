@@ -29,6 +29,16 @@ export const garageRouter = router({
         id: input.id,
       },
     })),
+  getServicesByVehicleId: protectedProcedure
+    .input(z.object({ id: z.number() }))
+    .query(({
+      ctx,
+      input,
+    }) => ctx.prisma.service.findMany({
+      where: {
+        vehicleId: input.id,
+      },
+    })),
   insertVehicle: protectedProcedure
     .input(z.object({
       name: z.string(),
