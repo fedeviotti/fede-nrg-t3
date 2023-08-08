@@ -37,6 +37,7 @@
     "@trpc/next": "10.8.1",
     "@trpc/react-query": "10.8.1",
     "@trpc/server": "10.8.1",
+    "date-fns": "^2.30.0",
     "formik": "^2.2.9",
     "framer-motion": "^8.5.2",
     "i18next": "^22.0.6",

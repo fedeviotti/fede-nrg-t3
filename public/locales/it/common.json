@@ -28,23 +28,34 @@
           "ctaAdd": "Aggiungi intervento"
         }
       },
-      "serviceDrawer" :{
-        "title": "Aggiungi intervento",
-        "createForm": {
-          "name": {
-            "label": "Nome",
-            "required": "Nome obbligatorio",
-            "minLength": "Nome deve essere di almeno 3 caratteri",
-            "helper": "Il nome dell'intervento è obbligatorio"
-          },
-          "description": {
-            "label": "Descrizione"
-          },
-          "price": {
-            "label": "Prezzo €",
-            "required": "Prezzo obbligatorio",
-            "minValue": "Il prezzo deve essere almeno di 0.01",
-            "helper": "Prezzo in € pagato per il servizio"
+      "service" :{
+        "drawer": {
+          "title": "Aggiungi intervento",
+          "createForm": {
+            "name": {
+              "label": "Nome",
+              "required": "Nome obbligatorio",
+              "minLength": "Nome deve essere di almeno 3 caratteri",
+              "helper": "Il nome dell'intervento è obbligatorio"
+            },
+            "description": {
+              "label": "Descrizione"
+            },
+            "price": {
+              "label": "Prezzo €",
+              "required": "Prezzo obbligatorio",
+              "minValue": "Il prezzo deve essere almeno di 0.01",
+              "helper": "Prezzo in € pagato per il servizio"
+            }
+          }
+        },
+        "card": {
+          "fields": {
+            "name": "Nome",
+            "description": "Descrizione",
+            "price": "Prezzo",
+            "createdAt": "Data di creazione",
+            "expiryAt": "Scadenza"
           }
         }
       }

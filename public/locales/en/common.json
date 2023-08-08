@@ -28,23 +28,34 @@
           "ctaAdd": "Add service"
         }
       },
-      "serviceDrawer" :{
-        "title": "Add service",
-        "createForm": {
-          "name": {
-            "label": "Name",
-            "required": "Name mandatory",
-            "minLength": "Name should be at least 3 characters long",
-            "helper": "The name of the service is mandatory"
-          },
-          "description": {
-            "label": "Description"
-          },
-          "price": {
-            "label": "Price €",
-            "required": "Price mandatory",
-            "minValue": "Price should be at least 0.01",
-            "helper": "Price in € payed for the service"
+      "service" :{
+        "drawer": {
+          "title": "Add service",
+          "createForm": {
+            "name": {
+              "label": "Name",
+              "required": "Name mandatory",
+              "minLength": "Name should be at least 3 characters long",
+              "helper": "The name of the service is mandatory"
+            },
+            "description": {
+              "label": "Description"
+            },
+            "price": {
+              "label": "Price €",
+              "required": "Price mandatory",
+              "minValue": "Price should be at least 0.01",
+              "helper": "Price in € payed for the service"
+            }
+          }
+        },
+        "card": {
+          "fields": {
+            "name": "Name",
+            "description": "Description",
+            "price": "Price",
+            "createdAt": "Created at",
+            "expiryAt": "Expiry at"
           }
         }
       }

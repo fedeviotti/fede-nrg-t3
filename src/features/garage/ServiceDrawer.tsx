@@ -59,13 +59,13 @@ export const ServiceDrawer = ({
     () => yup.object().shape({
       name: yup
         .string()
-        .required(t("garage.vehicle.serviceDrawer.createForm.name.required") || "Error")
-        .min(3, t("garage.vehicle.serviceDrawer.createForm.name.minLength") || "Error"),
+        .required(t("garage.vehicle.service.drawer.createForm.name.required") || "Error")
+        .min(3, t("garage.vehicle.service.drawer.createForm.name.minLength") || "Error"),
       description: yup
         .string(),
       price: yup.number()
-        .required(t("garage.vehicle.serviceDrawer.createForm.price.required") || "Error")
-        .min(0.01, t("garage.vehicle.serviceDrawer.createForm.price.minValue") || "Error"),
+        .required(t("garage.vehicle.service.drawer.createForm.price.required") || "Error")
+        .min(0.01, t("garage.vehicle.service.drawer.createForm.price.minValue") || "Error"),
     }),
     [t],
   );
@@ -97,31 +97,31 @@ export const ServiceDrawer = ({
           <Form>
             <DrawerContent>
               <DrawerCloseButton />
-              <DrawerHeader>{t("garage.vehicle.serviceDrawer.title")}</DrawerHeader>
+              <DrawerHeader>{t("garage.vehicle.service.drawer.title")}</DrawerHeader>
               <DrawerBody>
                 <Flex direction="column" gap={4}>
                   <FormControl isInvalid={!!touched.name && !!errors.name} isRequired>
-                    <FormLabel>{t("garage.vehicle.serviceDrawer.createForm.name.label")}</FormLabel>
+                    <FormLabel>{t("garage.vehicle.service.drawer.createForm.name.label")}</FormLabel>
                     <Field as={Input} type="text" name="name" />
                     {!!touched.name && !!errors.name
                       ? <FormErrorMessage>{errors.name}</FormErrorMessage>
-                      : <FormHelperText>{t("garage.vehicle.serviceDrawer.createForm.name.helper")}</FormHelperText>}
+                      : <FormHelperText>{t("garage.vehicle.service.drawer.createForm.name.helper")}</FormHelperText>}
                   </FormControl>
                   <FormControl isInvalid={!!touched.description && !!errors.description}>
-                    <FormLabel>{t("garage.vehicle.serviceDrawer.createForm.description.label")}</FormLabel>
+                    <FormLabel>{t("garage.vehicle.service.drawer.createForm.description.label")}</FormLabel>
                     <Field as={Input} type="text" name="description" />
                     {!!touched.description && !!errors.description
                       ? <FormErrorMessage>{errors.description}</FormErrorMessage>
                       : null}
                   </FormControl>
                   <FormControl isInvalid={!!touched.price && !!errors.price} isRequired>
-                    <FormLabel>{t("garage.vehicle.serviceDrawer.createForm.price.label")}</FormLabel>
+                    <FormLabel>{t("garage.vehicle.service.drawer.createForm.price.label")}</FormLabel>
                     <NumberInput>
                       <Field as={NumberInputField} name="price" />
                     </NumberInput>
                     {!!touched.price && !!errors.price
                       ? <FormErrorMessage>{errors.price}</FormErrorMessage>
-                      : <FormHelperText>{t("garage.vehicle.serviceDrawer.createForm.price.helper")}</FormHelperText>}
+                      : <FormHelperText>{t("garage.vehicle.service.drawer.createForm.price.helper")}</FormHelperText>}
                   </FormControl>
                 </Flex>
               </DrawerBody>
