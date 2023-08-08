@@ -4,6 +4,8 @@ import {
   Card, CardHeader,
   CardBody, Heading, Text, Grid, Divider,
 } from "@chakra-ui/react";
+import { format } from "date-fns";
+import { DATE_FORMAT } from "~/constants/date";
 
 type Props = {
   service: Service;
@@ -37,7 +39,7 @@ export const ServiceCard = ({ service }: Props) => (
           Data di creazione
         </Text>
         <Text pt="2" fontSize="sm">
-          {service.createdAt.toString()}
+          {format(service.createdAt, DATE_FORMAT)}
         </Text>
       </Grid>
     </CardBody>
