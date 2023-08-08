@@ -47,7 +47,13 @@ export const ServiceDrawer = ({
   isOpen, onClose, btnRef, vehicleId,
 }: Props) => {
   const { t } = useTranslation("common");
-  const insertService = trpc.garage.insertService.useMutation();
+  const utils = trpc.useContext();
+  const insertService = trpc.garage.insertService.useMutation({
+    onSuccess: () => {
+      utils.garage.getServicesByVehicleId.invalidate({ id: vehicleId });
+      onClose();
+    },
+  });
 
   const validationSchema = React.useMemo(
     () => yup.object().shape({
