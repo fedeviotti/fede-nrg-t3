@@ -17,8 +17,8 @@ import {
   CloseIcon, MoonIcon, SettingsIcon, SunIcon,
 } from "@chakra-ui/icons";
 import NextLink from "next/link";
-import LOGO_LIGHT from "assets/FEDENRG_LOGO_LIGHT.png";
-import LOGO_DARK from "assets/FEDENRG_LOGO_DARK.png";
+import LOGO_LIGHT from "~/assets/FEDENRG_LOGO_LIGHT.png";
+import LOGO_DARK from "~/assets/FEDENRG_LOGO_DARK.png";
 import { useTranslation } from "react-i18next";
 import { signOut } from "next-auth/react";
 import { PAGE_WIDTH } from "~/constants/layout";

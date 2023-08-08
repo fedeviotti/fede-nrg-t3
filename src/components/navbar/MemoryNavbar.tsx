@@ -3,8 +3,8 @@ import {
   Flex, HStack, Image, useColorMode, useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import MEMORY_LOGO_LIGHT from "assets/MEMORY_LOGO_LIGHT.png";
-import MEMORY_LOGO_DARK from "assets/MEMORY_LOGO_DARK.png";
+import MEMORY_LOGO_LIGHT from "~/assets/MEMORY_LOGO_LIGHT.png";
+import MEMORY_LOGO_DARK from "~/assets/MEMORY_LOGO_DARK.png";
 import { PAGE_WIDTH } from "~/constants/layout";
 
 const MemoryNavbar = () => {
