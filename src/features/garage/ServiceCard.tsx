@@ -4,7 +4,7 @@ import {
   Card, CardHeader,
   CardBody, Heading, Text, Grid, Divider,
 } from "@chakra-ui/react";
-import { format } from "date-fns";
+import { addDays, format } from "date-fns";
 import { DATE_FORMAT } from "~/constants/date";
 import { useTranslation } from "react-i18next";
 
@@ -48,7 +48,9 @@ export const ServiceCard = ({ service }: Props) => {
             {t("garage.vehicle.service.card.fields.expiryAt")}
           </Text>
           <Text pt="2" fontSize="sm">
-            -
+            {service.duration === 0
+              ? t("garage.vehicle.service.card.fields.noExpiry")
+              : format(addDays(service.createdAt, service.duration), DATE_FORMAT)}
           </Text>
         </Grid>
       </CardBody>
