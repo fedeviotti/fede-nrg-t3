@@ -2,6 +2,9 @@ import { z } from "zod";
 import { router, protectedProcedure } from "../trpc";
 
 export const garageRouter = router({
+  getVehicleTypes: protectedProcedure.query(({
+    ctx,
+  }) => ctx.prisma.vehicleType.findMany()),
   getVehiclesByOwner: protectedProcedure
     .input(z.object({ ownerId: z.string().nullish() }))
     .query(({
