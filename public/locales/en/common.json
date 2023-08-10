@@ -46,6 +46,20 @@
               "required": "Price mandatory",
               "minValue": "Price should be at least 0.01",
               "helper": "Price in € payed for the service"
+            },
+            "duration": {
+              "label": "Duration",
+              "required": "Duration mandatory"
+            },
+            "serviceDurationOptions": {
+              "label": "Duration",
+              "helper": "Duration of the service",
+              "day_one": "day",
+              "day_other": "days",
+              "month_one": "month",
+              "month_other": "months",
+              "year_one": "year",
+              "year_other": "years"
             }
           }
         },

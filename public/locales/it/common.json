@@ -46,6 +46,20 @@
               "required": "Prezzo obbligatorio",
               "minValue": "Il prezzo deve essere almeno di 0.01",
               "helper": "Prezzo in € pagato per il servizio"
+            },
+            "duration": {
+              "label": "Durata",
+              "required": "Durata obbligatoria"
+            },
+            "serviceDurationOptions": {
+              "label": "Durata",
+              "helper": "Periodo di validita del servizio",
+              "day_one": "giorno",
+              "day_other": "giorni",
+              "month_one": "mese",
+              "month_other": "mesi",
+              "year_one": "anno",
+              "year_other": "anni"
             }
           }
         },
