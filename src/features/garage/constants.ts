@@ -1,6 +1,7 @@
 import { ServiceDurationOption } from "~/features/garage/types/serviceDurationOption";
 
 export const SERVICE_DURATION_OPTIONS = [
+  { value: 0, type: "day", daysNumber: 0 },
   { value: 1, type: "day", daysNumber: 1 },
   { value: 2, type: "day", daysNumber: 2 },
   { value: 3, type: "day", daysNumber: 3 },
