@@ -14,7 +14,7 @@ import {
   FormLabel,
   Input,
   NumberInput,
-  NumberInputField,
+  NumberInputField, Select,
   Stack,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
@@ -23,6 +23,7 @@ import {
 } from "formik";
 import * as yup from "yup";
 import { trpc } from "~/utils/trpc";
+import { SERVICE_DURATION_OPTIONS } from "~/features/garage/constants";
 
 type Props = {
   isOpen: boolean;
@@ -35,12 +36,14 @@ type ServiceFormValues = {
   name: string;
   description: string;
   price: string;
+  duration: string;
 };
 
 const INITIAL_VALUES: ServiceFormValues = {
   name: "",
   description: "",
   price: "0",
+  duration: "0",
 };
 
 export const ServiceDrawer = ({
@@ -66,6 +69,7 @@ export const ServiceDrawer = ({
       price: yup.number()
         .required(t("garage.vehicle.service.drawer.createForm.price.required") || "Error")
         .min(0.01, t("garage.vehicle.service.drawer.createForm.price.minValue") || "Error"),
+      duration: yup.number().required(),
     }),
     [t],
   );
@@ -73,6 +77,7 @@ export const ServiceDrawer = ({
   const onSubmitHandler = React.useCallback((values: ServiceFormValues) => {
     insertService.mutate({
       ...values,
+      duration: Number(values.duration),
       price: Number(values.price),
       vehicleId,
     });
@@ -122,6 +127,24 @@ export const ServiceDrawer = ({
                     {!!touched.price && !!errors.price
                       ? <FormErrorMessage>{errors.price}</FormErrorMessage>
                       : <FormHelperText>{t("garage.vehicle.service.drawer.createForm.price.helper")}</FormHelperText>}
+                  </FormControl>
+                  <FormControl isInvalid={!!touched.duration && !!errors.duration} isRequired>
+                    <FormLabel>{t("garage.vehicle.service.drawer.createForm.duration.label")}</FormLabel>
+                    <NumberInput>
+                      <Field as={Select} name="duration">
+                        {SERVICE_DURATION_OPTIONS.map((option) => (
+                          <option
+                            key={option.value}
+                            value={option.daysNumber}
+                          >
+                            {t(`garage.vehicle.service.drawer.createForm.serviceDurationOptions.${option.type}`, { count: option.value })}
+                          </option>
+                        ))}
+                      </Field>
+                    </NumberInput>
+                    {!!touched.duration && !!errors.duration
+                      ? <FormErrorMessage>{errors.duration}</FormErrorMessage>
+                      : null}
                   </FormControl>
                 </Flex>
               </DrawerBody>
