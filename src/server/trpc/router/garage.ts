@@ -58,6 +58,7 @@ export const garageRouter = router({
       name: z.string(),
       description: z.string().nullish(),
       price: z.number(),
+      duration: z.number(),
       vehicleId: z.number(),
     }))
     .mutation(({
