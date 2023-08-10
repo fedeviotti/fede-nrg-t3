@@ -70,7 +70,8 @@
             "description": "Descrizione",
             "price": "Prezzo",
             "createdAt": "Data di creazione",
-            "expiryAt": "Scadenza"
+            "expiryAt": "Scadenza",
+            "noExpiry": "Senza scadenza"
           }
         }
       }

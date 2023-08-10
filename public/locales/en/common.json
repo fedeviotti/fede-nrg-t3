@@ -70,7 +70,8 @@
             "description": "Description",
             "price": "Price",
             "createdAt": "Created at",
-            "expiryAt": "Expiry at"
+            "expiryAt": "Expiry at",
+            "noExpiry": "No expiry"
           }
         }
       }
