@@ -1,4 +1,4 @@
-type DayValues = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 14 | 21 | 28;
+type DayValues = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 14 | 21 | 28;
 type MonthValues = 1 | 2 | 3 | 4 | 5 | 6 | 9;
 type YearValues = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
