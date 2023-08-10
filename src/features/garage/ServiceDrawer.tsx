@@ -43,7 +43,7 @@ const INITIAL_VALUES: ServiceFormValues = {
   name: "",
   description: "",
   price: "0",
-  duration: "1",
+  duration: "0",
 };
 
 export const ServiceDrawer = ({
@@ -137,8 +137,6 @@ export const ServiceDrawer = ({
                             key={option.value}
                             value={option.daysNumber}
                           >
-                            {option.value}
-                            {" "}
                             {t(`garage.vehicle.service.drawer.createForm.serviceDurationOptions.${option.type}`, { count: option.value })}
                           </option>
                         ))}
