@@ -1,5 +1,7 @@
+import type { VehicleType } from "~/features/garage/types/vehicle";
+
 type TagColor = {
-  type: string;
+  type: VehicleType;
   color: string;
 };
 
@@ -11,6 +13,10 @@ const VEHICLE_IMAGES: TagColor[] = [
   {
     type: "car",
     color: "orange",
+  },
+  {
+    type: "motorbike",
+    color: "red",
   },
 ];
 
