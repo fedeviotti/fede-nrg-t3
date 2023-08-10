@@ -55,6 +55,10 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
   const sessionData = useIsAuthenticated();
   const utils = trpc.useContext();
   const insertVehicle = trpc.garage.insertVehicle.useMutation();
+  const {
+    data: vehicleTypes,
+    isLoading: isVehicleTypesLoading,
+  } = trpc.garage.getVehicleTypes.useQuery();
   const toast = useToast();
 
   const onSuccessHandler = React.useCallback(() => {
@@ -124,8 +128,8 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
                     name="typeId"
                     placeholder={t("garage.vehicle.createForm.field.type")}
                   >
-                    <option value={1}>Bike</option>
-                    <option value={2}>Car</option>
+                    {vehicleTypes?.map((type) => (
+                      <option key={type.id} value={type.id}>{type.name}</option>))}
                   </Field>
                 </Flex>
               </ModalBody>
@@ -138,7 +142,7 @@ export const VehicleFormModal = ({ isOpen, onClose }: Props) => {
                   type="submit"
                   form="create-vehicle"
                   isLoading={isSubmitting}
-                  isDisabled={!isValid || !dirty}
+                  isDisabled={!isValid || !dirty || isVehicleTypesLoading}
                 >
                   {t("garage.vehicle.createForm.button.ctaAdd")}
                 </Button>
