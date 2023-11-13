@@ -27,7 +27,7 @@ specifiers:
   formik: ^2.2.9
   framer-motion: ^8.5.2
   husky: ^8.0.3
-  i18next: ^22.0.6
+  i18next: ^22.5.1
   lint-staged: ^13.1.0
   next: 13.1.1
   next-auth: ^4.18.8
@@ -61,13 +61,13 @@ dependencies:
   date-fns: 2.30.0
   formik: 2.2.9_react@18.2.0
   framer-motion: 8.5.2_biqbaboplfbrettd7655fr4n2y
-  i18next: 22.0.6
+  i18next: 22.5.1
   next: 13.1.1_672uxklweod7ene3nqtsh262ca
   next-auth: 4.18.8_mibeyvivfhhmvvbkd4wwrgzcom
   nodemailer: 6.8.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-i18next: 12.1.4_nger6pvrp5hnzeykouhwqmsdti
+  react-i18next: 12.1.4_spyi3zqm3bqfobczid2f6jym6y
   superjson: 1.13.1
   yup: 0.32.11
   zod: 3.19.1
@@ -3434,10 +3434,10 @@ packages:
     hasBin: true
     dev: true
 
-  /i18next/22.0.6:
-    resolution: {integrity: sha512-RlreNGoPIdDP4QG+qSA9PxZKGwlzmcozbI9ObI6+OyUa/Rp0EjZZA9ubyBjw887zVNZsC+7FI3sXX8oiTzAfig==}
+  /i18next/22.5.1:
+    resolution: {integrity: sha512-8TGPgM3pAD+VRsMtUMNknRz3kzqwp/gPALrWMsDnmC1mKqJwpWyooQRLMcbTwq8z8YwSmuj+ZYvc+xCuEpkssA==}
     dependencies:
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.22.10
     dev: false
 
   /ignore/5.2.0:
@@ -4274,7 +4274,7 @@ packages:
       use-sidecar: 1.1.2_kzbn2opkn2327fwg5yzwzya5o4
     dev: false
 
-  /react-i18next/12.1.4_nger6pvrp5hnzeykouhwqmsdti:
+  /react-i18next/12.1.4_spyi3zqm3bqfobczid2f6jym6y:
     resolution: {integrity: sha512-XQND7jYtgM7ht5PH3yIZljCRpAMTlH/zmngM9ZjToqa+0BR6xuu8c7QF0WIIOEjcMTB2S3iOfpN/xG/ZrAnO6g==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -4289,7 +4289,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.7
       html-parse-stringify: 3.0.1
-      i18next: 22.0.6
+      i18next: 22.5.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
